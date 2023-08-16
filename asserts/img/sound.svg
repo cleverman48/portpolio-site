@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 371.87 84.01">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #ffeb00;
+      }
+
+      .cls-2 {
+        font-family: Verdana-Bold, Verdana;
+        font-size: 72px;
+        font-weight: 700;
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="m65.74,58.79c0,1.55-.89,2.99-2.36,3.8-.79.44-1.69.66-2.59.66-.77,0-1.55-.16-2.25-.49L13.58,42.02v3.25c0,2.95-2.64,5.34-5.91,5.34h-1.77c-3.26,0-5.9-2.39-5.9-5.34v-19.24c0-2.95,2.64-5.34,5.9-5.34h1.77c3.27,0,5.91,2.39,5.91,5.34v4.24L58.32,9.26c.72-.35,1.5-.51,2.28-.51.89,0,1.78.21,2.56.64,1.48.8,2.38,2.23,2.39,3.79l.19,45.61Z"/>
+  <text class="cls-2" transform="translate(78.52 62.17)"><tspan x="0" y="0">SOUND</tspan></text>
+</svg>

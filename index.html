@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIBATAMAKIMAKI</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery.min.js"></script>
+</head>
+
+<body >
+    <div id="total" >
+        <div class="loader">  
+            <div id="myProgress">
+                <div id="progress_percent"></div>
+            </div>
+            <p class="display-center" id="hello">Hello ~ How's It Going?</p>
+        </div>
+    </div>
+    <script>
+        var percent = 0;
+        var myVar;
+        var show_percent = document.getElementById("progress_percent");
+        myVar = setInterval(myTimer, 50);   
+        function myTimer() {
+            if(percent==100){
+                clearInterval(myVar);
+                document.getElementById("hello").innerHTML = "I’m Good!";  
+                location.href="./html/sound.html";
+            }
+            else
+            {
+                percent+=1;
+                show_percent.style.width = percent+"%";
+            }
+        }
+    </script>
+</body>
+
+</html>

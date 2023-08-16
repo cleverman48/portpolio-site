@@ -1,0 +1,11 @@
+<svg id="me_bt" xmlns="http://www.w3.org/2000/svg" width="71" height="35" viewBox="0 0 71 35">
+  <g id="Rectangle_234" data-name="Rectangle 234" transform="translate(3 5)" fill="#287a88" stroke="#5b667b" stroke-width="2">
+    <rect width="68" height="30" rx="15" stroke="none"/>
+    <rect x="1" y="1" width="66" height="28" rx="14" fill="none"/>
+  </g>
+  <g id="Rectangle_235" data-name="Rectangle 235" fill="#3ba3b5" stroke="#5b667b" stroke-width="2">
+    <rect width="68" height="30" rx="15" stroke="none"/>
+    <rect x="1" y="1" width="66" height="28" rx="14" fill="none"/>
+  </g>
+  <text id="ME" transform="translate(33 20)" fill="#fff" font-size="14" font-family="Poppins-BoldItalic, Poppins" font-weight="700" font-style="italic" letter-spacing="0.1em"><tspan x="-10.913" y="0">ME</tspan></text>
+</svg>

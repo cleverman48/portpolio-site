@@ -1,0 +1,283 @@
+body{
+    background-image: url("../asserts/img/intro.png");
+    background-repeat: repeat;
+    width: 100vw;
+    height: 100vh;
+    margin:0;
+}
+.total{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.display-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.content{
+    width: 759px;
+    height: 100vh;
+}
+#ops{
+    width: 550px;
+    height: 236px;
+    margin-top: 71px;
+}
+#thankyou{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Zen Maru Gothic", sans-serif;
+    color: white;
+    margin-top: -33px;
+    display: block;
+}
+#thankyou1{
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Zen Maru Gothic", sans-serif;
+    color: white;
+    margin-top: -33px;
+    display: none;
+}
+#error{
+    text-align: center;
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: bold;
+    font-family: "Zen Maru Gothic", sans-serif;
+    color: white;
+    width: 546px;
+    height: 116px;
+    margin-top: 45px;
+    display: block;
+}
+#error1{
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Zen Maru Gothic", sans-serif;
+    color: white;
+    width: 546px;
+    height: 116px;
+    margin-top: 32px;
+    display: none;
+}
+#link{
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Zen Maru Gothic", sans-serif;
+    color: white;
+    width: 221px;
+    height: 42px;
+    border-radius: 25px;
+    border: 2px solid white;
+    margin-top: 14px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#error_en{
+    text-align: center;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: bold;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: white;
+    width: 629px;
+    height: 101px;
+    margin-top: 50px;
+    z-index: 1;
+    display: block;
+}
+#error_en1{
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: white;
+    width: 629px;
+    height: 101px;
+    margin-top: 50px;
+    z-index: 1;
+    display: none;
+}
+.touch_pan{
+    display:flex;
+    justify-content: right;
+    width: 629px;
+    height: 101px;
+    margin-top: -115px;
+    align-items:end;
+    z-index: -1;
+}
+#touch{
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: white;
+    width: 96px;
+    height: 30px;
+    border-radius: 25px;
+    border: 2px solid white;
+    margin-top: 14px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#sibata{
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: white;
+    width: 112px;
+    height: auto;
+    margin-top:85px;
+}
+@media only screen and (max-width: 600px) {   
+    .content{
+        width: 338px;
+        height: 100vh;
+    }
+    #ops{
+        width: 338px;
+        height: 145px;
+        margin-top: 40.4px;
+    }
+    #thankyou{
+        text-align: center;
+        font-size: 18px;
+        
+        font-weight: bold;
+        font-family: "Zen Maru Gothic", sans-serif;
+        color: white;
+        width: 340px;
+        height: 58px;
+        margin-top: -14px;
+        display: none;
+    }
+    #thankyou1{
+        text-align: center;
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: bold;
+        font-family: "Zen Maru Gothic", sans-serif;
+        color: white;
+        width: 340px;
+        height: 58px;
+        margin-top: -14px;
+        display: block;
+    }
+    #error{
+        text-align: left;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: "Zen Maru Gothic", sans-serif;
+        color: white;
+        width: 546px;
+        height: 116px;
+        margin-top: 32px;
+        display: none;
+    }
+    #error1{
+        text-align: left;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: "Zen Maru Gothic", sans-serif;
+        color: white;
+        width: 546px;
+        height: 116px;
+        margin-top: 32px;
+        line-height: 32px;
+        display: block;
+    }
+    #link{
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: "Zen Maru Gothic", sans-serif;
+        color: white;
+        width: 191px;
+        height: 35px;
+        border-radius: 25px;
+        border: 2px solid white;
+        margin-top: -30px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #error_en1{
+        text-align: left;
+        font-size: 10px;
+        line-height: 22px;
+        font-weight: bold;
+        font-family: 'Poppins', Arial, sans-serif;
+        color: white;
+        width: 336px;
+        height: 142px;
+        margin-top: 36.5px;
+        z-index: 1;
+        display: block;
+    }
+    #error_en{
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        font-family: 'Poppins', Arial, sans-serif;
+        color: white;
+        width: 629px;
+        height: 101px;
+        margin-top: 50px;
+        z-index: 1;
+        display: none;
+    }
+    .touch_pan{
+        display:flex;
+        justify-content:end;
+        width: 629px;
+        height: 101px;
+        margin-top: -140px;
+        align-items:end;
+        z-index: -1;
+    }
+    #touch{
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: 'Poppins', Arial, sans-serif;
+        color: white;
+        width: 94px;
+        height: 30px;
+        border-radius: 25px;
+        border: 2px solid white;
+        margin-top: 14px;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 72px;
+    }
+    #sibata{
+        text-align: center;
+        font-size: 9px;
+        font-weight: bold;
+        font-family: 'Poppins', Arial, sans-serif;
+        color: white;
+        width: 112px;
+        height: 12px;
+        height: auto;
+        margin-top:39.4px;
+    }
+
+}

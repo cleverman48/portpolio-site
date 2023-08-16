@@ -1,0 +1,155 @@
+body{
+    background-image: url("../asserts/img/intro.png");
+    background-color: #5B667B;
+    background-repeat: repeat;
+    width: 100vw;
+    height: 100vh;
+    margin:0;
+}
+.total{
+    width: 100%;
+    height: 100%;
+}
+.display-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    width: 436px;
+    height: auto;
+}
+#sound_img{
+    width: 75px;
+    height: 69px;
+}
+#sound_letter{
+    width: 344px;
+    height: 127px;
+    margin-left: 17px;
+}
+#sound_word{
+    color: white;
+    font-size: 22px;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: bold;
+    height: 32px;
+    text-align: center;
+    margin-top: 0px;
+    letter-spacing: 0.2em;
+}
+.onoff_pan{
+    width: 100%;
+    height: 91px;
+    margin-top: 13px;
+    display: flex;
+    justify-content: center;
+}
+#sound_on{
+    font-size: 70px;
+    font-weight: bold;
+    font-family: Poppins, sans-serif;
+    width: 95px;
+    height: 47px;
+    color:#848484;
+    cursor: url('../asserts/img/point.png'), auto;
+    text-align:justify;
+    margin-left: 20px;
+}
+#sound_on:hover{
+    color:#FC7D66;
+}
+#sound_dot{
+    font-size: 65px;
+    font-weight: bold;
+    font-family: Poppins, sans-serif;
+    color:#848484;
+    width: 108px;
+    height: 47px;
+    margin-left: 0px;
+    text-align: center;
+}
+#sound_off{
+    font-size: 70px;
+    font-weight: bold;
+    font-family: Poppins, sans-serif;
+    color:#848484;
+    width: 120px;
+    height: 47px;
+    margin-left: 0px;
+    cursor: url('../asserts/img/point.png'), auto;
+    text-align: center;
+}
+#sound_off:hover{
+    color:#66A0FC;
+}
+@media only screen and (max-width: 600px) {   
+    .content{
+        width: 308.5px;
+        height: auto;
+    }
+    #sound_img{
+        width: 51px;
+        height: 44px;
+    }
+    #sound_letter{
+        width: 240px;
+        height: 88px;
+        margin-left: 17px;
+    }
+    #sound_word{
+        color: white;
+        font-size: 16px;
+        font-family: "Zen Maru Gothic", sans-serif;
+        font-weight: bold;
+        height: 24px;
+        text-align: center;
+        margin-top: 0px;
+        letter-spacing: 0.1em;
+    }
+    .onoff_pan{
+        width: 210px;
+        height: 60px;
+        margin-top: 0px;
+        display: flex;
+        justify-content:space-around;
+    }
+    #sound_on{
+        font-size: 43px;
+        font-weight: bold;
+        font-family: Poppins, sans-serif;
+        width: 66px;
+        height: 60px;
+        color:#848484;
+        cursor: url('../asserts/img/point.png'), auto;
+        text-align:justify;
+        margin-left: 0px;
+    }    
+    #sound_dot{
+        font-size: 43px;
+        font-weight: bold;
+        font-family: Poppins, sans-serif;
+        color:#848484;
+        width: 60px;
+        height: 60px;
+        margin-left: 0px;
+        text-align: center;
+    }
+    #sound_off{
+        font-size: 43px;
+        font-weight: bold;
+        font-family: Poppins, sans-serif;
+        color:#848484;
+        width: 71px;
+        height: 60px;
+        margin-left: 0px;
+        cursor: url('../asserts/img/point.png'), auto;
+        text-align: center;
+    }
+}
