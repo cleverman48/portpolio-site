@@ -1,3 +1,34 @@
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('../asserts/font/ZenMaruGothic-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('../asserts/font/ZenMaruGothic-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../asserts/font/Poppins-Bold.ttf') format('truetype'), 
+  url('../asserts/font/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../asserts/font/Poppins-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic; 
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../asserts/font/Poppins-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic; 
+}
 html,body{
     max-width: 100vw;
     height: 100vh;

@@ -1,3 +1,46 @@
+@font-face {
+  font-family: 'Manrope3';
+  src: url('../asserts/font/manrope-extrabold.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'Manrope3';
+  src: url('../asserts/font/manrope-regular.otf') format('truetype');
+  font-weight: regular;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('../asserts/font/ZenMaruGothic-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('../asserts/font/ZenMaruGothic-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../asserts/font/Poppins-Bold.ttf') format('truetype'), 
+  url('../asserts/font/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../asserts/font/Poppins-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic; 
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../asserts/font/Poppins-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic; 
+}
 body{
     margin:0;
     cursor: url('../asserts/img/point.png'), auto; 
@@ -19,10 +62,84 @@ body{
       opacity: 1;
     }
 }
+.modal {
+   position: fixed; /* Position it as fixed */
+   z-index: 100000; /* Set a high z-index value */
+   left: 0;
+   top: 0;
+   width: 100%; /* Make it take up the full width */
+   height: 100%; /* Make it take up the full height */
+   overflow: auto; /* Enable scrolling if needed */
+   background-color: rgba(91, 102, 123, 0.9);  /* Add a semi-transparent background */
+   display: none;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ .modal-content {
+   padding: 20px;
+   max-width: 800px;
+   height: auto;
+   /* max-height: 87%; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   overflow: hidden;
+ }
+ #modal_img{
+   width: 100%;
+   height: 100%;
+ }
+ #modal_close{
+   position: absolute;
+   width: 29px;
+   height: 29px;
+   top:50px;
+   right:50px;
+ }
+ .m_left{
+   position: absolute;
+   width: 50px;
+   height: 70px;
+   top:calc(50%-35px);
+   left:0px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ .m_right{
+   position: absolute;
+   width: 50px;
+   height: 70px;
+   top:calc(50%-35px);
+   right:0px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ #modal_left{
+   width: 18px;
+   height: 35px;
+ }
+ #modal_right{
+   width: 18px;
+   height: 35px;
+ }  
 .display-center{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.content{
+   width: 100%;
+}
+.besttop{
+   width: 100%;
+   height: 100vh;
+   margin: 0;
+   display: flex;
+   justify-content: center;
 }
 .total{
     width: 100%;
@@ -54,7 +171,7 @@ body{
         display: flex;
         justify-content: center;
         width: 494px;
-        height: 770px;
+        height: auto;
         position: fixed;
         top:30px;
         z-index: -3;     
@@ -83,15 +200,462 @@ body{
             margin-top: 76px;
             width: 289px;
             height: 312px;
-            animation: fadeIn 4s ease-in;
+            animation: fadeIn 1.5s ease-in;
         }
         #animals{
             width: 701px;
             height: 565px;
             position:absolute;
             bottom: -54.5px;
-            animation: fadeIn 1s ease-in;
+            animation: fadeIn 0.5s ease-in;
         }
+   .nav{
+      width: 470px;
+      height: 93px;
+      position: fixed;
+      top:0px;
+      right: 257px;
+      z-index: 9999;
+      animation: fadeIn 1s ease-in;
+   }
+     #nav_img{
+         width: 470px;
+         height: 93px;
+         margin: 0;
+     }
+     #menu_me_small{
+         font-family: 'Poppins', sans-serif;
+         font-size: 14px;
+         font-weight:bold;
+         font-style: italic;
+         color: white;
+         width: 47px;
+         height: 47px;
+         cursor: url('../asserts/img/point.png'), auto;
+         border-radius: 50%;
+         background-color: #287A88;
+         border: 2px solid #5B667B;
+         position: absolute;
+         right: 13px;
+         top: 17px;
+         z-index: 9999;
+         display: none;
+      }
+      #menu_me_small::before {
+         content: "ME";
+         font-family: 'Poppins', Arial, sans-serif;
+         font-size: 14px;
+         font-weight:bold;
+         font-style: italic;
+         text-align: center;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         position: relative;
+         top: -7px;
+         left: -7px;
+         right: -7px;
+         bottom: -7px;
+         width: 47px;
+         height: 47px;
+         border-radius: 50%;
+         background-color:#3BA3B5;
+         border: 2px solid #5B667B;
+ 
+       }
+       #menu_me_small:hover::before {
+         content: "ME";
+         font-family: 'Poppins', Arial, sans-serif;
+         font-size: 14px;
+          font-weight:bold;
+         font-style: italic;
+         text-align: center;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         position: relative;
+         top: -5px;
+         left: -5px;
+         right: -5px;
+         bottom: -5px;
+         width: 47px;
+         height: 47px;
+         border-radius: 50%;
+         background-color:#3BA3B5;
+         border: 2px solid #5B667B;
+       }
+   .caracter_subpage{
+      background-image: url("../asserts/img/caracter_bg.svg"); 
+      background-repeat: repeat;
+      width: 470px;
+      min-height: 100%;
+      position: absolute;
+      top:0px;
+      right: 257px;
+      overflow: hidden;
+      z-index: 5;
+      display:none;
+   }
+      #sub_caracter_title{
+         font-family: "Poppins", sans-serif;
+         font-weight: bold;
+         font-size: 30px;
+         -webkit-text-stroke: 2px #5B667B;
+         -webkit-text-fill-color: #F59DD1;
+         text-align:center;
+         position: relative;
+         width: 100%;
+         margin-top: 120px;
+         letter-spacing: 0.05em;
+      }
+      #sub_caracter_name{
+         font-family: "Zen Maru Gothic", sans-serif;
+         font-weight: bold;
+         font-size: 36px;
+         color:#5B667B;
+         text-align: center;
+         position: relative;
+         margin-top: -26px;
+      }
+      .sub_top_card{
+         width: 100%;
+         height: auto;
+         position: relative;
+         margin-top: -19px;
+         
+      }
+      .sub_card-content
+      {
+         width: 420px;
+         height: 420px;  
+         border: 2px solid #5B667B;
+         background-color: #5B667B;
+         border-radius:20px;
+         z-index: 5;
+         box-shadow: 5px 5px #5B667B;
+         overflow: hidden;
+      }
+      .sub_card-content img{
+         width:425px;
+         height: 425px;
+      }
+      #sub_caracter_detail_title{
+         font-family: "Zen Maru Gothic", sans-serif;
+         font-weight: bold;
+         font-size: 16px;
+         color:#5B667B;
+         text-align: center;
+         position: relative;
+         margin-top: 50px;
+         width: 70%;
+         line-height: 2em;
+      }
+      #sub_caracter_detail{
+         font-family: "Zen Maru Gothic", sans-serif;
+         font-weight: bold;
+         font-size: 16px;
+         color:#5B667B;
+         text-align: center;
+         position: relative;
+         margin-top: 50px;
+         width: 70%;
+         line-height: 2em;
+      }
+      #sub_caracter_twocardpan{
+         width: 100%;
+         height: auto;
+         margin-top: 20px;
+      }
+      .sub_row{
+         width: 100%;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+      }
+      .two-card_s{
+         width: 450px;
+         height: 213px;
+         display: flex;
+         justify-content:space-around;
+         margin-top: 11px;
+         position: relative;
+      }
+      .card_s{
+         width: 203px;
+         height: 203px;
+         border: 2px solid #5B667B;
+         background-color: #5B667B;
+         box-shadow: 5px 5px #5B667B;
+         border-radius:20px;
+         z-index: 5;
+         overflow: hidden;
+         position: relative;
+      }
+      .tcard-content_s{
+         width:100%;
+         height: 100%;
+         background-color: #A7F8D3;
+         overflow: hidden;
+      }
+      .tcard-content_s img{
+         width:208px;
+         height: 208px;
+      }
+      .tcard_arraw{
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         left: 0px;
+         top:0px;
+      }
+      .tcard_arraw img{
+         width: 23px;
+         height: 23px;
+         position: absolute;
+         top: 171px;
+         right:10px;
+         z-index: 11;
+      }
+      #sub_caracter_detail_title_2{
+         font-family: "Zen Maru Gothic", sans-serif;
+         font-weight: bold;
+         font-size: 24px;
+         color:#5B667B;
+         text-align: center;
+         position: relative;
+         margin-top: 50px;
+         width: 70%;
+         line-height: 2em;
+      }
+      #sub_caracter_detail_2{
+         font-family: "Zen Maru Gothic", sans-serif;
+         font-weight: bold;
+         font-size: 14px;
+         color:#5B667B;
+         text-align:left;
+         position: relative;
+         margin-top: 50px;
+         width:90%;
+         line-height: 2em;
+      }
+      #sub_caracter_othertitle{
+         font-family: "Poppins", sans-serif;
+         font-weight: bold;
+         font-size: 26px;
+         -webkit-text-stroke: 2px #5B667B;
+         -webkit-text-fill-color: #F59DD1;
+         text-align:center;
+         position: relative;
+         width: 100%;
+         margin-top: 70px;
+      }
+      .sub_horizen_content{
+         position: relative;
+         margin-top:24px;
+         min-width: 100%;
+         height: 131px;
+         /* display: flex;
+         justify-content: space-between; */
+      }
+      #shori1{
+         position: absolute;
+      }
+      #shori2{
+         position: absolute;     
+      }
+      #shori3{
+         position: absolute;
+      }
+      #shori4{
+         position: absolute;
+      }
+      #shori5{
+         position: absolute;
+      }
+      #caracter_backtotop{
+         font-family: 'Poppins', Arial, sans-serif;
+         font-size: 20px;
+         font-weight: bold;
+         color: white;
+         width: 238px;
+         height: 52px;
+         cursor: url('../asserts/img/point.png'), auto;
+         border-radius: 40px;
+         background-color: #BA709C;
+         border: 2px solid #5B667B;
+         position: relative;
+         margin-top: 120px;
+      }
+      #caracter_backtotop::before {
+         content: attr(data-before);
+         text-align: center;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         position: absolute;
+         top: -7px;
+         left: -7px;
+         right: -7px;
+         bottom: -7px;
+         width: 238px;
+         height: 52px;
+         border-radius: 40px;
+         background-color:#F59DD1;
+         border: 2px solid #5B667B;
+      }
+      #caracter_backtotop:hover::before {
+         content: attr(data-before);
+         text-align: center;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         position: absolute;
+         top: -5px;
+         left: -5px;
+         right: -5px;
+         bottom: -5px;
+         width: 238px;
+         height: 52px;
+         border-radius: 40px;
+         background-color:#F59DD1;
+         border: 2px solid #5B667B;
+      }
+      #caracter_go_top img{
+         cursor: url('../asserts/img/point.png'), auto;
+         width:470px;
+         height: 85px;
+         margin-bottom: -5px;
+      }
+.design_subpage{
+   background-image: url("../asserts/img/design_bg.svg"); 
+   background-repeat: repeat;
+   width: 470px;
+   min-height: 100%;
+   position: absolute;
+   top:0px;
+   right: 257px;
+   overflow: hidden;
+   z-index: 5;
+   display:none;
+}
+   #sub_design_title{
+      font-family: "Poppins", sans-serif;
+      font-weight: bold;
+      font-size: 30px;
+      -webkit-text-stroke: 2px #5B667B;
+      -webkit-text-fill-color: #6689FF;
+      text-align:center;
+      position: relative;
+      width: 100%;
+      margin-top: 120px;
+      letter-spacing: 0.05em;
+   }
+   #sub_design_name{
+      font-family: "Zen Maru Gothic", sans-serif;
+      font-weight: bold;
+      font-size: 36px;
+      color:#5B667B;
+      text-align: center;
+      position: relative;
+      margin-top: -21px;
+   }
+   #sub_design_detail{
+      font-family: "Zen Maru Gothic", sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      color:#5B667B;
+      text-align: center;
+      position: relative;
+      margin-top: 50px;
+      width: 70%;
+      line-height: 2em;
+   }
+   #sub_design_othertitle{
+      font-family: "Poppins", sans-serif;
+      font-weight: bold;
+      font-size: 26px;
+      -webkit-text-stroke: 2px #5B667B;
+      -webkit-text-fill-color: #6689FF;
+      text-align:center;
+      position: relative;
+      width: 100%;
+      margin-top: 70px;
+   }
+   .sub_horizen_content_d{
+      position: relative;
+      margin-top:24px;
+      min-width: 100%;
+      height: 131px;
+   }
+   #shori1_d{
+      position: absolute;
+   }
+   #shori2_d{
+      position: absolute;     
+   }
+   #shori3_d{
+      position: absolute;
+   }
+   #shori4_d{
+      position: absolute;
+   }
+   #shori5_d{
+      position: absolute;
+   }
+   #design_backtotop{
+      font-family: 'Poppins', Arial, sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      width: 238px;
+      height: 52px;
+      cursor: url('../asserts/img/point.png'), auto;
+      border-radius: 40px;
+      background-color: #6689FF;
+      border: 2px solid #5B667B;
+      position: relative;
+      margin-top: 120px;
+   }
+   #design_backtotop::before {
+      content: attr(data-before);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: -7px;
+      left: -7px;
+      right: -7px;
+      bottom: -7px;
+      width: 238px;
+      height: 52px;
+      border-radius: 40px;
+      background-color:#6689FF;
+      border: 2px solid #5B667B;
+   }
+   #design_backtotop:hover::before {
+      content: attr(data-before);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      width: 238px;
+      height: 52px;
+      border-radius: 40px;
+      background-color:#6689FF;
+      border: 2px solid #5B667B;
+   }
+   #design_go_top img{
+      cursor: url('../asserts/img/point.png'), auto;
+      width:470px;
+      height: 85px;
+      margin-bottom: -5px;
+   }
 .main_side{
     width: 470px;
     min-height: 100%;
@@ -99,83 +663,9 @@ body{
     top:0px;
     right: 257px;
     overflow: hidden;
+    display: block;
 }
-    .nav{
-        width: 470px;
-        height: 93px;
-        position: fixed;
-        top: 0px;
-        z-index: 9999;
-        animation: fadeIn 2s ease-in;
-    }
-    #nav_img{
-        width: 470px;
-        height: 93px;
-        margin: 0;
-    }
-    #menu_me_small{
-        font-family: 'Poppins', Arial, sans-serif;
-        font-size: 14px;
-        font-weight:bold;
-        font-style: italic;
-        color: white;
-        width: 47px;
-        height: 47px;
-        cursor: url('../asserts/img/point.png'), auto;
-        border-radius: 50%;
-        background-color: #287A88;
-        border: 2px solid #5B667B;
-        position: absolute;
-        right: 13px;
-        top: 17px;
-        z-index: 9999;
-        visibility: hidden;
-     }
-     #menu_me_small::before {
-        content: "ME";
-        font-family: 'Poppins', Arial, sans-serif;
-        font-size: 14px;
-        font-weight:bold;
-        font-style: italic;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        top: -7px;
-        left: -7px;
-        right: -7px;
-        bottom: -7px;
-        width: 47px;
-        height: 47px;
-        border-radius: 50%;
-        background-color:#3BA3B5;
-        border: 2px solid #5B667B;
-        visibility: hidden;
-
-      }
-      #menu_me_small:hover::before {
-        content: "ME";
-        font-family: 'Poppins', Arial, sans-serif;
-        font-size: 14px;
-         font-weight:bold;
-        font-style: italic;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        top: -5px;
-        left: -5px;
-        right: -5px;
-        bottom: -5px;
-        width: 47px;
-        height: 47px;
-        border-radius: 50%;
-        background-color:#3BA3B5;
-        border: 2px solid #5B667B;
-        visibility: hidden;
-      }
+  
     a{
         text-decoration: none;
         cursor: url('../asserts/img/point.png'), auto; 
@@ -188,64 +678,98 @@ body{
        overflow: hidden;
     }
     #top_content{
-        animation: fadeIn 4s ease-in;
+        animation: fadeIn 1s ease-in;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .recommend_pan{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 378px;
+      height: 378px;
+      position: relative;
+      margin-top:176px;
     }
     .makimaki{
         font-weight:bolder;
         font-family:'Poppins', Arial, sans-serif;
-         font-size: 31px;
-         color: #5B667B;
-         margin-top: 105px;
-         margin-left:20px;
-    }
-    #recomend_text{
-        margin-left:20px;
+        font-size: 31px;
+        color: #5B667B;
         position: absolute;
-        top: 135.5px;
+        top: -87px;
+        left: -16px;
+        
+    }
+    #recomend_text{            
         z-index: 11;
         width: 330px;
         height: auto;
+        position: absolute;
+        top:-30px;
+        left:-16px;
     }
     #recomend_black_text{
-        margin-left:22px;
-        position: absolute;
-        top: 137.5px;
         z-index: 10;
-    }
-    .card-footer p{
-        text-align: center;
-        font-size: 19px;
-        margin-left: 20px;
-        margin-top: 11px;
-        color: white;
-        font-family: "Zen Maru Gothic", sans-serif;
-        font-weight: bold;
-        width: 196px;
-        height: 27px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        letter-spacing: 0.05em;
-    }
-    #check_it{
-        width: 146px;
-        height: 143px;
+        position: absolute;
+        top:-27px;
+        left:-13px;
     }
     .top_card{
-      width: 373px;
-      height: 373px;
-      position: absolute;
-      top:176px;
-      left: 46px;
-      margin-top: 0px;
-      margin-left:0px;
+      width: 371px;
+      height: 371px;    
       border: 2px solid #5B667B;
       background-color: #5B667B;
       border-radius:20px;
       z-index: 5;
       overflow: hidden;
       box-shadow: 5px 5px #5B667B;
+      position: absolute;
+      top:0px;
+      left:0px;
     } 
+    .card-content{
+      width:100%;
+      height: 85%;
+      overflow: hidden;
+    }
+    .card-content img{
+        width:378px;
+        height: 378px;
+    }
+    .card-footer{
+        width: 100%;
+        height: 15%;
+        border-top:2px solid #5B667B;
+        background-color: #838EA3;
+    }
+    .card-footer p{
+      text-align: center;
+      font-size: 19px;
+      margin-left: 20px;
+      margin-top: 11px;
+      color: white;
+      font-family: "Zen Maru Gothic", sans-serif;
+      font-weight: bold;
+      width: 196px;
+      height: 27px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      letter-spacing: 0.05em;
+    }
+    .check_it{
+        z-index: 6;
+        cursor: url('../asserts/img/point.png'), auto; 
+        position: absolute;
+        bottom:-31px;
+        right:-31px;
+    }  
+    #check_it{
+      width: 146px;
+      height: 143px;
+    }
     .two-card{
       width: 97%;
       height: 208px;
@@ -286,7 +810,7 @@ body{
         color:white;
         margin-left: 12px;
         margin-top: 9px;
-        font-family: 'Poppins', Arial, sans-serif;
+        font-family: 'Zen Maru Gothic', sans-serif;
         font-weight: bold;
         font-size: 13px;
         white-space: nowrap;
@@ -301,28 +825,7 @@ body{
         margin-right: 12px;
         margin-top: 15px;
     }
-    .card-content{
-        width:100%;
-        height: 85%;
-        overflow: hidden;
-    }
-    .card-content img{
-        width:378px;
-        height: 378px;
-    }
-    .card-footer{
-        width: 100%;
-        height: 15%;
-        border-top:2px solid #5B667B;
-        background-color: #838EA3;
-    }
-    .check_it{
-        position: absolute;
-        top:428.4px;
-        right:15px;
-        z-index: 6;
-        cursor: url('../asserts/img/point.png'), auto; 
-    }  
+
     .horizen_content{
       position: absolute;
       top:595px;
@@ -393,7 +896,7 @@ body{
      {
         width:311px;
         height: 40px;
-        margin-top: 80px;
+        margin-top: 135px;
      }
      #caracter_help{
         width:316px;
@@ -408,6 +911,11 @@ body{
         font-size: 18px;
         font-weight: bold;
          color: #424A58;
+     }
+     .sub_content{
+       width: 100%;
+       height: auto;
+       display: none;
      }
      .more_bt{
         width: 100%;
@@ -435,7 +943,7 @@ body{
         position: relative;
      }
      #caracter_more::before {
-        content: "MORE";
+        content: attr(data-before);
         text-align: center;
         display: flex;
         justify-content: center;
@@ -452,7 +960,7 @@ body{
         border: 2px solid #5B667B;
       }
       #caracter_more:hover::before {
-        content: "MORE";
+        content: attr(data-before);
         text-align: center;
         display: flex;
         justify-content: center;
@@ -475,9 +983,9 @@ body{
         height: auto;
      }
      #design_title{
-        width:430px;
-        height: 41px;
-        margin-top: 80px;
+        width:408px;
+        height: auto;
+        margin-top: 135px;
      }
      #design_help{
         width:316px;
@@ -507,7 +1015,7 @@ body{
         position: relative;
      }
      #design_more::before {
-        content: "MORE";
+        content: attr(data-before);
         text-align: center;
         display: flex;
         justify-content: center;
@@ -524,7 +1032,7 @@ body{
         border: 2px solid #5B667B;
       }
       #design_more:hover::before {
-        content: "MORE";
+        content: attr(data-before);
         text-align: center;
         display: flex;
         justify-content: center;
@@ -549,7 +1057,7 @@ body{
      #shop_title{
         width:311px;
         height: 40px;
-        margin-top: 120px;
+        margin-top: 196px;
      }
      #shop_text{
         height: 26px;
@@ -632,7 +1140,7 @@ body{
      #me_title{
         width:128px;
         height: 66px;
-        margin-top: 120px;
+        margin-top: 166px;
      }
      #me_help{
         width:316px;
@@ -706,7 +1214,7 @@ body{
         z-index: 5;
         overflow: hidden;
         margin-left: 63px;
-        box-shadow: 0px 2px white;
+        transform: translateZ(0);
      }
      .photo_content{
         width:100%;
@@ -761,16 +1269,18 @@ body{
      }
      .photo_footer #t1{
         font-size: 23px;
-        font-family: 'Zen Maru Gothic', Arial, sans-serif;
+        font-family: 'Zen Maru Gothic', sans-serif;
+        margin-top: 13px;
+        font-weight: bold;
      }
      .photo_footer #t2{
         font-size: 11px;
-        font-family: 'Poppins', Arial, sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-weight: bold;
      }
      .photo_footer #t3{
         font-size: 13px;
-        font-family: 'Zen Maru Gothic', Arial, sans-serif;
+        font-family: 'Zen Maru Gothic', sans-serif;
         font-weight: bold;
      }
      .link{
@@ -817,9 +1327,25 @@ body{
         border-top-right-radius: 25px;
         position: fixed;
         bottom: 0px;
+        right:257px;
         z-index: 9000;
         display: none;
         animation: fadeIn 1s ease-in;
+     }
+     .footer_real{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content:center;
+      padding-left: 10px;
+      padding-right: 20px;
+     }
+     .small_menu_bt{
+      width: 100%;
+      height: 85px;
+      display: flex;
+      flex-direction:column;
+      align-items: center;
      }
     #menu_caracter_small{
         font-family: 'Poppins', Arial, sans-serif;
@@ -833,14 +1359,13 @@ body{
         border-radius: 50%;
         background-color: #BA709C;
         border: 2px solid #5B667B;
-        position: absolute;
-        left:25px;
-        top: 7px;
+        position: relative;
+        margin-top: 7px;
         z-index: 9999;
      }
      #menu_caracter_small::before {
         content: "C";
-        font-family: 'Poppins', Arial, sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 28px;
         font-weight:bold;
         font-style: italic;
@@ -887,9 +1412,8 @@ body{
         font-weight: bold;
         font-size: 9px;
         color: white;
-        position: absolute;
-        left:20px;
-        bottom:6px;
+        position: relative;
+        margin-top:3px;
     }
     #menu_design_small{
         font-family: 'Poppins', Arial, sans-serif;
@@ -903,9 +1427,8 @@ body{
         border-radius: 50%;
         background-color: #5370CB;
         border: 2px solid #5B667B;
-        position: absolute;
-        left: 122px;
-        top: 7px;
+        position: relative;
+        margin-top: 7px;
         z-index: 9999;
         visibility: visible;
      }
@@ -958,9 +1481,8 @@ body{
         font-weight: bold;
         font-size: 9px;
         color: white;
-        position: absolute;
-        left:110px;
-        bottom:6px;
+        position: relative;
+        margin-top:3px;
     }
     #menu_shop_small{
         font-family: 'Poppins', Arial, sans-serif;
@@ -974,9 +1496,8 @@ body{
         border-radius: 50%;
         background-color: #B5811E;
         border: 2px solid #5B667B;
-        position: absolute;
-        left: 219px;
-        top: 7px;
+        position: relative;
+        margin-top: 7px;
         z-index: 9999;
         visibility: visible;
      }
@@ -1029,31 +1550,44 @@ body{
         font-weight: bold;
         font-size: 9px;
         color: white;
-        position: absolute;
-        left:215px;
-        bottom:6px;
+        position: relative;
+        margin-top:3px;
+    }
+    .small_menu_doll_pan{
+      width: 100%;
+      height: 148px;
+      display: flex;
+      flex-direction:column;
+      align-items: center;
+      position: relative;
+    }
+    .small_menu_doll_container{
+      width: 120px;
+      height: 120px;
+      margin-top: -63px;
+      position: relative;
     }
     #doll_m{
-        width: 86px;
+        width: 101px;
         height: 120px;
         position: absolute;
-        left: 296px;
-        top:-63px;
+        margin-top: 0px;
+        margin-left: 0px;
     }
     #soundbg_m{
-    width: 66px;
-    height: 66px;
-    position: absolute;
-    left: 349px;
-    top:-9px;
-    z-index: 10;
+      width: 66px;
+      height: 66px;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+      z-index: 10;
     }
     #playstopsound_m{
         width: 37px;
         height: 37px;
         position: absolute;
-        left: 363px;
-        top:6px;
+        bottom: 15px;
+        right: 15px;
         z-index: 11;
     }
     #doll_letter{
@@ -1061,9 +1595,8 @@ body{
         font-weight: bold;
         font-size: 8px;
         color: #5B667B;
-        position: absolute;
-        left:320px;
-        bottom:6px;
+        position: relative;
+        margin-top:4.5px;
     }
      .top_pcontainer{
         bottom: 0;
@@ -1074,16 +1607,17 @@ body{
         align-items: center;
         position: absolute;
         white-space: nowrap;
-        border-top: 2px solid #fa8907;
-        border-bottom: 2px solid #fa8907;
+        border-top: 2px solid #5B667B;
+        border-bottom: 2px solid #5B667B;
      }
      .top_pcontainer p{
         width: auto;
         font-family: "Zen Maru Gothic", sans-serif;
-        font-size: 1.5rem;
+        font-size: 24px;
         white-space: nowrap;
+        font-weight: bold;
         animation: stream 40s linear infinite;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.05em;     
      }  
      .pcontainer{
         bottom: 0;
@@ -1094,11 +1628,14 @@ body{
         align-items: center;
         margin-top: 80px;
         white-space: nowrap;
+        border-top: 2px solid #5B667B;
+        border-bottom: 2px solid #5B667B;
      }
      .pcontainer p{
         width: auto;
         font-family: "Zen Maru Gothic", sans-serif;
-        font-size: 1.5rem;
+        font-size: 24px;
+        font-weight: bold;
         white-space: nowrap;
         animation: stream 40s linear infinite;
         letter-spacing: 0.05em;
@@ -1128,7 +1665,7 @@ body{
     /* margin-top: 11%; */
     width: 193px;
     height: 225px;
-    animation: fadeIn 3s ease-in;
+    animation: fadeIn 1s ease-in;
 }
 #menu_caracter{
     font-family: 'Poppins', Arial, sans-serif;
@@ -1402,7 +1939,7 @@ body{
     justify-content: center;
     position: relative;
     margin-top:66px;
-    animation: fadeIn 3s ease-in;
+    animation: fadeIn 1s ease-in;
 }
 .sound_onoff{
     width: 168px;
@@ -1440,12 +1977,22 @@ body{
     display: flex;
     justify-content: center;
     position: relative;
-    margin-top:37.7px;
-    animation: fadeIn 3s ease-in;
+    margin-top:23px;
+    animation: fadeIn 1s ease-in;
 }
 #doll{
-    width: 111px;
-    height: 155px;
+    width: 134px;
+    height: 160px;
+}
+#copy_right{
+   position: absolute;
+   font-family: 'Poppins', sans-serif;
+   font-size: 9px;
+   font-weight: bold;
+   color: #5B667B;
+   right: 8px;
+   bottom: -3px;
+   letter-spacing: 0.05em;
 }
 @keyframes dance {
     0% {
@@ -1465,6 +2012,17 @@ body{
     }
 }
 @media only screen and (max-width: 1020px) {   
+   .modal-content {
+      padding: 20px;
+      max-width: 70%;
+      height: auto;
+      /* max-height: 87%; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
   .right_side{
     width: 0px;
     height: 85px;
@@ -1499,7 +2057,7 @@ body{
     display: flex;
     justify-content: center;
     width: 494px;
-    height: 900px;
+    height: 1200px;
     position: fixed;
     top:30px;
     z-index: -3;
@@ -1528,15 +2086,39 @@ body{
         margin-top: 76px;
         width: 289px;
         height: 312px;
-        animation: fadeIn 4s ease-in;
+        animation: fadeIn 1.5s ease-in;
     }
     #animals{
         width: 701px;
         height: 565px;
         position:absolute;
         bottom: -54.5px;
-        animation: fadeIn 1s ease-in;
+        animation: fadeIn 0.5s ease-in;
     }
+   .caracter_subpage{
+      background-image: url("../asserts/img/caracter_bg.svg"); 
+      background-repeat: repeat;
+      width: 470px;
+      min-height: 100%;
+      position: absolute;
+      top:0px;
+      right: 0px;
+      overflow: hidden;
+      /* z-index: 5; */
+      display:none;
+   }
+   .design_subpage{
+      background-image: url("../asserts/img/design_bg.svg"); 
+      background-repeat: repeat;
+      width: 470px;
+      min-height: 100%;
+      position: absolute;
+      top:0px;
+      right: 0px;
+      overflow: hidden;
+      /* z-index: 5; */
+      display:none;
+   }
   .main_side{
     width: 470px;
     min-height: 100%;
@@ -1550,8 +2132,9 @@ body{
     height: 93px;
     position: fixed;
     top: 0px;
+    right:0px;
     z-index: 9999;
-    animation: fadeIn 2s ease-in;
+    animation: fadeIn 1s ease-in;
 }
 #nav_img{
     width: 470px;
@@ -1574,7 +2157,7 @@ body{
     right: 13px;
     top: 17px;
     z-index: 9999;
-    visibility: hidden;
+    display: none;
  }
  #menu_me_small::before {
     content: "ME";
@@ -1596,7 +2179,6 @@ body{
     border-radius: 50%;
     background-color:#3BA3B5;
     border: 2px solid #5B667B;
-    visibility: hidden;
   }
   #menu_me_small:hover::before {
     content: "ME";
@@ -1618,76 +2200,11 @@ body{
     border-radius: 50%;
     background-color:#3BA3B5;
     border: 2px solid #5B667B;
-    visibility: hidden;
   }
 a{
     text-decoration: none;
     cursor: url('../asserts/img/point.png'), auto; 
 }
-.top_page{
-   background-image: url("../asserts/img/top_bg.svg"); 
-   background-repeat:repeat;
-   width: 100%;
-   min-height: 800px;
-   overflow: hidden;
-}
-#top_content{
-    animation: fadeIn 4s ease-in;
-}
-.makimaki{
-    font-weight:bolder;
-    font-family:'Poppins', Arial, sans-serif;
-     font-size: 31px;
-     color: #5B667B;
-     margin-top: 105px;
-     margin-left:20px;
-}
-#recomend_text{
-    margin-left:20px;
-    position: absolute;
-    top: 135.5px;
-    z-index: 11;
-    width: 330px;
-    height: auto;
-}
-#recomend_black_text{
-    margin-left:22px;
-    position: absolute;
-    top: 137.5px;
-    z-index: 10;
-}
-.card-footer p{
-    text-align: center;
-    font-size: 19px;
-    margin-left: 20px;
-    margin-top: 11px;
-    color: white;
-    font-family: "Zen Maru Gothic", sans-serif;
-    font-weight: bold;
-    width: 196px;
-    height: 27px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    letter-spacing: 0.05em;
-}
-#check_it{
-    width: 146px;
-    height: 143px;
-}
-.top_card{
-  width: 373px;
-  height: 373px;
-  position: absolute;
-  top:176px;
-  left: 46px;
-  border: 2px solid #5B667B;
-  background-color: #5B667B;
-  border-radius:20px;
-  z-index: 5;
-  overflow: hidden;
-  box-shadow: 5px 5px #5B667B;
-} 
 .card .tcard-footer{
     width: 100%;
     height: 20%;
@@ -1696,28 +2213,6 @@ a{
     display:flex;
     justify-content:space-between;
 }
-.card-content{
-    width:100%;
-    height: 85%;
-    overflow: hidden;
-}
-.card-content img{
-    width:378px;
-    height: 378px;
-}
-.card-footer{
-    width: 100%;
-    height: 15%;
-    border-top:2px solid #5B667B;
-    background-color: #838EA3;
-}
-.check_it{
-    position: absolute;
-    top:428.4px;
-    right:15px;
-    z-index: 6;
-    cursor: url('../asserts/img/point.png'), auto; 
-}  
 .horizen_content{
   position: absolute;
   top:595px;
@@ -1738,7 +2233,7 @@ a{
  {
     width:311px;
     height: 40px;
-    margin-top: 80px;
+    margin-top: 135px;
  }
  #caracter_help{
     width:316px;
@@ -1780,7 +2275,7 @@ a{
     position: relative;
  }
  #caracter_more::before {
-    content: "MORE";
+    content: attr(data-before);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -1797,7 +2292,7 @@ a{
     border: 2px solid #5B667B;
   }
   #caracter_more:hover::before {
-    content: "MORE";
+    content: attr(data-before);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -1818,11 +2313,6 @@ a{
     background-repeat: repeat;
     width: 100%;
     height: auto;
- }
- #design_title{
-    width:430px;
-    height: 41px;
-    margin-top: 80px;
  }
  #design_help{
     width:316px;
@@ -1852,7 +2342,7 @@ a{
     position: relative;
  }
  #design_more::before {
-    content: "MORE";
+    content: attr(data-before);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -1869,7 +2359,7 @@ a{
     border: 2px solid #5B667B;
   }
   #design_more:hover::before {
-    content: "MORE";
+    content: attr(data-before);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -1894,7 +2384,7 @@ a{
  #shop_title{
     width:311px;
     height: 40px;
-    margin-top: 120px;
+    margin-top: 196px;
  }
  #shop_text{
     height: 26px;
@@ -1977,7 +2467,7 @@ a{
  #me_title{
     width:128px;
     height: 66px;
-    margin-top: 120px;
+    margin-top: 166px;
  }
  #me_help{
     width:316px;
@@ -2051,6 +2541,7 @@ a{
     z-index: 5;
     overflow: hidden;
     margin-left: 63px;
+    transform: translateZ(0);
  }
  .photo_content{
     width:100%;
@@ -2106,6 +2597,7 @@ a{
  .photo_footer #t1{
     font-size: 23px;
     font-family: 'Zen Maru Gothic', Arial, sans-serif;
+    font-weight: bold;
  }
  .photo_footer #t2{
     font-size: 11px;
@@ -2153,261 +2645,18 @@ a{
     position: relative;
  }
  footer{
-    width: 466px;
-    height: 85px;
-    background-color: #838EA3;
-    border:2px solid #5B667B;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-    position: fixed;
-    bottom: 0px;
-    z-index: 9000;
-    display: none;
-    animation: fadeIn 1s ease-in;
- }
-#menu_caracter_small{
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 28px;
-    font-weight:bold;
-    font-style: italic;
-    color: white;
-    width: 47px;
-    height: 47px;
-    cursor: url('../asserts/img/point.png'), auto;
-    border-radius: 50%;
-    background-color: #BA709C;
-    border: 2px solid #5B667B;
-    position: absolute;
-    left:25px;
-    top: 7px;
-    z-index: 9999;
- }
- #menu_caracter_small::before {
-    content: "C";
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 28px;
-    font-weight:bold;
-    font-style: italic;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: -7px;
-    left: -7px;
-    right: -7px;
-    bottom: -7px;
-    width: 47px;
-    height: 47px;
-    border-radius: 50%;
-    background-color:#F59DD1;
-    border: 2px solid #5B667B;
-    visibility: visible;
-  }
-  #menu_caracter_small:hover::before {
-    content: "C";
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 28px;
-     font-weight:bold;
-    font-style: italic;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    width: 47px;
-    height: 47px;
-    border-radius: 50%;
-    background-color:#F59DD1;
-    border: 2px solid #5B667B;
-    visibility: visible;
-  }
-#caracter_letter{
-    font-family: Manrope3;
-    font-weight: bold;
-    font-size: 9px;
-    color: white;
-    position: absolute;
-    left:20px;
-    bottom:6px;
-}
-#menu_design_small{
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 28px;
-    font-weight:bold;
-    font-style: italic;
-    color: white;
-    width: 47px;
-    height: 47px;
-    cursor: url('../asserts/img/point.png'), auto;
-    border-radius: 50%;
-    background-color: #5370CB;
-    border: 2px solid #5B667B;
-    position: absolute;
-    left: 122px;
-    top: 7px;
-    z-index: 9999;
-    visibility: visible;
- }
- #menu_design_small::before {
-    content: "D";
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 28px;
-    font-weight:bold;
-    font-style: italic;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: -7px;
-    left: -7px;
-    right: -7px;
-    bottom: -7px;
-    width: 47px;
-    height: 47px;
-    border-radius: 50%;
-    background-color:#6689FF;
-    border: 2px solid #5B667B;
-    visibility: visible;
-  }
-  #menu_design_small:hover::before {
-    content: "D";
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 28px;
-     font-weight:bold;
-    font-style: italic;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    width: 47px;
-    height: 47px;
-    border-radius: 50%;
-    background-color:#6689FF;
-    border: 2px solid #5B667B;
-    visibility: visible;
-  }
-#design_letter{
-    font-family: Manrope3;
-    font-weight: bold;
-    font-size: 9px;
-    color: white;
-    position: absolute;
-    left:110px;
-    bottom:6px;
-}
-#menu_shop_small{
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 28px;
-    font-weight:bold;
-    font-style: italic;
-    color: white;
-    width: 47px;
-    height: 47px;
-    cursor: url('../asserts/img/point.png'), auto;
-    border-radius: 50%;
-    background-color: #B5811E;
-    border: 2px solid #5B667B;
-    position: absolute;
-    left: 219px;
-    top: 7px;
-    z-index: 9999;
-    visibility: visible;
- }
- #menu_shop_small::before {
-    content: "S";
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 28px;
-    font-weight:bold;
-    font-style: italic;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: -7px;
-    left: -7px;
-    right: -7px;
-    bottom: -7px;
-    width: 47px;
-    height: 47px;
-    border-radius: 50%;
-    background-color:#FCB838;
-    border: 2px solid #5B667B;
-    visibility: visible;
-  }
-#menu_shop_small:hover::before {
-    content: "S";
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 28px;
-     font-weight:bold;
-    font-style: italic;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    width: 47px;
-    height: 47px;
-    border-radius: 50%;
-    background-color:#FCB838;
-    border: 2px solid #5B667B;
-    visibility: visible;
-  }
-#shop_letter{
-    font-family: Manrope3;
-    font-weight: bold;
-    font-size: 9px;
-    color: white;
-    position: absolute;
-    left:215px;
-    bottom:6px;
-}
-#doll_m{
-    width: 86px;
-    height: 120px;
-    position: absolute;
-    left: 296px;
-    top:-63px;
-}
-#soundbg_m{
-width: 66px;
-height: 66px;
-position: absolute;
-left: 349px;
-top:-9px;
-z-index: 10;
-}
-#playstopsound_m{
-    width: 37px;
-    height: 37px;
-    position: absolute;
-    left: 363px;
-    top:6px;
-    z-index: 11;
-}
-#doll_letter{
-    font-family: Manrope3;
-    font-weight: bold;
-    font-size: 8px;
-    color: #5B667B;
-    position: absolute;
-    left:320px;
-    bottom:6px;
+   width: 466px;
+   height: 85px;
+   background-color: #838EA3;
+   border:2px solid #5B667B;
+   border-top-left-radius: 25px;
+   border-top-right-radius: 25px;
+   position: fixed;
+   bottom: 0px;
+   right:0px;
+   z-index: 9000;
+   display: none;
+   animation: fadeIn 1s ease-in;
 }
  .top_pcontainer{
     bottom: 0;
@@ -2421,8 +2670,9 @@ z-index: 10;
  }
  .top_pcontainer p{
     width: auto;
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
     white-space: nowrap;
     animation: stream 40s linear infinite;
     letter-spacing: 0.05em;
@@ -2439,8 +2689,9 @@ z-index: 10;
  }
  .pcontainer p{
     width: auto;
-    font-family: 'Poppins', Arial, sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Zen Maru Gothic', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
     white-space: nowrap;
     animation: stream 40s linear infinite;
     letter-spacing: 0.05em;
@@ -2453,197 +2704,16 @@ z-index: 10;
     transform: translateX(-100%);
     }
   }    
-  footer{
-      width: 466px;
-      height: 85px;
-      background-color: #838EA3;
-      border:2px solid #5B667B;
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px;
-      position: fixed;
-      bottom: 0px;
-      z-index: 9000;
-      display:flex;
-      animation: fadeIn 1s ease-in;
-  }
-
 }
-/* @media only screen and (max-width: 470px) {   
-    .total{
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-    }
-    .left_side{
-        height: 100vh;
-        width: 470px;
-        overflow: hidden;
-        background-color: #66B8BF;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index:0;
-        position: relative;
-    }  
-    #left_bg{
+@media only screen and (max-width: 470px) {   
+   .besttop{
+      width: 100%;
+      height: auto;
       display: flex;
       justify-content: center;
-      width:400px;
-      height: 776px;
-      position: absolute;
-      top:30px;
-      z-index: -3;
-    } 
-    .ls_content1{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;  
-        position: absolute;
-        top:0px;
-        bottom: 0px;
-        z-index: -1;
-    }
-    .ls_content2{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;  
-        position: absolute;
-        top:0px;
-        bottom: 0px;
-        z-index: -2;
-    }
-        #logo{
-          margin-top: 102.4px;
-          width: 195px;
-          height: 210px;
-        }
-        #animals{
-          width: 446px;
-          height: 415px;
-          position: absolute;
-          bottom: -36px;
-        }
-    .main_side{
-        width: 470px;
-        min-height: 100%;
-        overflow: hidden;
-        position: relative;
-        right: 0px;
-    }
-    .nav{
-        width: 470px;
-        height: 93px;
-        position: fixed;
-        top: 0px;
-        z-index: 9000;
-        animation: fadeIn 1s ease-in;
-    }
-    #go_top img{
-      cursor: url('../asserts/img/point.png'), auto;
-      width:470px;
-      height: 85px;
-      margin-bottom: -5px;
+      margin: 0;
    }
-   #go_top_bottom{
-     display: block;
-     width: 470px;
-     height: 100px;
-     background-color: #5B667B;
-   }
-    #menu_me_small{
-        font-family: 'Poppins', Arial, sans-serif;
-        font-size: 14px;
-        font-weight:bold;
-        font-style: italic;
-        color: white;
-        width: 47px;
-        height: 47px;
-        cursor: url('../asserts/img/point.png'), auto;
-        border-radius: 50%;
-        background-color: #287A88;
-        border: 2px solid #5B667B;
-        position: absolute;
-        right: 13px;
-        top: 17px;
-        z-index: 9999;
-        visibility: visible;
-     }
-     #menu_me_small::before {
-        content: "ME";
-        font-family: 'Poppins', Arial, sans-serif;
-        font-size: 14px;
-        font-weight:bold;
-        font-style: italic;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        top: -7px;
-        left: -7px;
-        right: -7px;
-        bottom: -7px;
-        width: 47px;
-        height: 47px;
-        border-radius: 50%;
-        background-color:#3BA3B5;
-        border: 2px solid #5B667B;
-        visibility: visible;
-      }
-      #menu_me_small:hover::before {
-        content: "ME";
-        font-family: 'Poppins', Arial, sans-serif;
-        font-size: 14px;
-         font-weight:bold;
-        font-style: italic;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        top: -5px;
-        left: -5px;
-        right: -5px;
-        bottom: -5px;
-        width: 47px;
-        height: 47px;
-        border-radius: 50%;
-        background-color:#3BA3B5;
-        border: 2px solid #5B667B;
-        visibility: visible;
-      }
-    footer{
-        width: 466px;
-        height: 85px;
-        background-color: #838EA3;
-        border:2px solid #5B667B;
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
-        position: fixed;
-        bottom: 1px;
-        z-index: 9000;
-        display:flex;
-        animation: fadeIn 1s ease-in;
-    }
-    .right_side{
-        width: 100%;
-        height: 85px;
-        position:fixed;
-        bottom:0px;
-        background-color: #838EA3; 
-        display:none;
-        justify-content: space-between;
-    }
-
-} */
-@media only screen and (max-width: 470px) {   
-  .total{
+   .total{
       width: 100%;
       height: auto;
       display: flex;
@@ -2652,6 +2722,52 @@ z-index: 10;
       justify-content: center;
       margin: 0;
   }
+.modal-content {
+   padding: 20px;
+   width: 89%;
+   height: auto;
+   /* max-height: 75%; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   overflow: hidden;
+ }
+  #modal_close{
+   position: absolute;
+   width: 29px;
+   height: 29px;
+   top:20px;
+   right:20px;
+ }
+ .m_left{
+   position: absolute;
+   width: 50px;
+   height: 70px;
+   top:85%;
+   left:0px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ .m_right{
+   position: absolute;
+   width: 50px;
+   height: 70px;
+   top:85%;
+   right:0px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ #modal_left{
+   width: 18px;
+   height: 35px;
+ }
+ #modal_right{
+   width: 18px;
+   height: 35px;
+ }  
   .left_side{
       height: 100vh;
       width: 100%;
@@ -2698,26 +2814,238 @@ z-index: 10;
           height: 210px;
       }
       #animals{
-          width: 450px;
-          height: 495px;
+          width: 500px;
+          height: auto;
           position:absolute;
           bottom: -36px;
       }
+      .caracter_subpage{
+         background-image: url("../asserts/img/caracter_bg.svg"); 
+         background-repeat: repeat;
+         top:0px;
+         /* z-index: 5; */
+         display:none;
+
+         width: 100%;
+         min-height: 100vh;
+         overflow: hidden;
+         position: relative;
+         right: 0px;
+      }       
+         #sub_caracter_name{
+            font-family: "Zen Maru Gothic", sans-serif;
+            font-weight: bold;
+            font-size: 28px;
+            color:#5B667B;
+            text-align: center;
+            position: relative;
+            margin-top: -26px;
+         }
+         .sub_top_card{
+            width: 100%;
+            height: auto;
+            position: relative;
+            margin-top: 16px;
+         }
+         .sub_card-content
+         {
+            width: 330px;
+            height: 330px;  
+            border: 2px solid #5B667B;
+            background-color: #5B667B;
+            border-radius:20px;
+            z-index: 5;
+            box-shadow: 5px 5px #5B667B;
+            overflow: hidden;
+         }
+         .sub_card-content img{
+            width:340px;
+            height: 340px;
+         }
+         #sub_caracter_detail_title{
+            font-family: "Zen Maru Gothic", sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+            color:#5B667B;
+            text-align: center;
+            position: relative;
+            margin-top: 50px;
+            width: 70%;
+            line-height: 2em;
+         }
+         #sub_caracter_detail{
+            font-family: "Zen Maru Gothic", sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+            color:#5B667B;
+            text-align: center;
+            position: relative;
+            margin-top: 50px;
+            width: 70%;
+            line-height: 2em;
+         }
+         #sub_caracter_twocardpan{
+            width: 100%;
+            height: auto;
+            margin-top: 80px;
+         }      
+         .two-card_s{
+            width: 97%;
+            height: 163px;
+            display: flex;
+            justify-content:space-around;
+            margin-top: 11px;
+            position: relative;
+         }
+         .card_s{
+            width: 157px;
+            height: 157px;
+            border: 2px solid #5B667B;
+            background-color: #5B667B;
+            box-shadow: 5px 5px #5B667B;
+            border-radius:20px;
+            z-index: 5;
+            overflow: hidden;
+            position: relative;
+         }
+         .tcard-content_s img{
+            width:170px;
+            height: 170px;
+         }     
+         .tcard_arraw img{
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            top: 171px;
+            right:10px;
+            z-index: 11;
+         }
+         #sub_caracter_detail_title_2{
+            font-family: "Zen Maru Gothic", sans-serif;
+            font-weight: bold;
+            font-size: 22px;
+            color:#5B667B;
+            text-align: center;
+            position: relative;
+            margin-top: 50px;
+            width: 70%;
+            line-height: 2em;
+         }
+         #sub_caracter_detail_2{
+            font-family: "Zen Maru Gothic", sans-serif;
+            font-weight: bold;
+            font-size: 12px;
+            color:#5B667B;
+            text-align:left;
+            position: relative;
+            margin-top: 50px;
+            width:90%;
+            line-height: 2em;
+         }
+         #sub_caracter_othertitle{
+            font-family: "Poppins", sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            -webkit-text-stroke: 2px #5B667B;
+            -webkit-text-fill-color: #F59DD1;
+            text-align:center;
+            position: relative;
+            width: 100%;
+            margin-top: 70px;
+         }
+         .sub_horizen_content{
+            position: relative;
+            margin-top:24px;
+            min-width: 100%;
+            height: 102px;
+            /* display: flex;
+            justify-content: space-between; */
+         }       
+         #caracter_go_top img{
+            cursor: url('../asserts/img/point.png'), auto;
+            width:100%;
+            height: 85px;
+            margin-bottom: -5px;
+         }
+   .design_subpage{
+      background-image: url("../asserts/img/design_bg.svg"); 
+      background-repeat: repeat;
+      top:0px;
+      /* z-index: 5; */
+      display:none;
+
+      width: 100%;
+      min-height: 100vh;
+      overflow: hidden;
+      position: relative;
+      right: 0px;
+   }      
+      #sub_design_name{
+         font-family: "Zen Maru Gothic", sans-serif;
+         font-weight: bold;
+         font-size: 28px;
+         color:#5B667B;
+         text-align: center;
+         position: relative;
+         margin-top: -21px;
+      }
+      #sub_design_detail{
+         font-family: "Zen Maru Gothic", sans-serif;
+         font-weight: bold;
+         font-size: 14px;
+         color:#5B667B;
+         text-align: center;
+         position: relative;
+         margin-top: 50px;
+         width: 70%;
+         line-height: 2em;
+      }
+      #sub_design_othertitle{
+         font-family: "Poppins", sans-serif;
+         font-weight: bold;
+         font-size: 20px;
+         -webkit-text-stroke: 2px #5B667B;
+         -webkit-text-fill-color: #6689FF;
+         text-align:center;
+         position: relative;
+         width: 100%;
+         margin-top: 70px;
+      }
+      .sub_horizen_content_d{
+         position: relative;
+         margin-top:24px;
+         min-width: 100%;
+         height: 102px;
+      }   
+      #design_go_top img{
+         cursor: url('../asserts/img/point.png'), auto;
+         width:100%;
+         height: 85px;
+         margin-bottom: -5px;
+      }
   .main_side{
       width: 100%;
-      min-height: 100%;
+      min-height: 100vh;
       overflow: hidden;
       position: relative;
       right: 0px;
   }
   .nav{
       width: 100%;
-      height: 86px;
+      height: auto;
       position: fixed;
       top: 0px;
       z-index: 9999;
       animation: fadeIn 1s ease-in;
   }
+  #nav_img
+  {
+      width: 105%;
+      height: auto;
+      position: absolute;
+      top:-7px;
+      left:-4%;
+  }   
   #menu_me_small{
       font-family: 'Poppins', Arial, sans-serif;
       font-size: 14px;
@@ -2734,7 +3062,7 @@ z-index: 10;
       right: 5px;
       top: 16px;
       z-index: 9999;
-      visibility: visible;
+      display: none;
    }
    #menu_me_small::before {
       content: "ME";
@@ -2756,7 +3084,6 @@ z-index: 10;
       border-radius: 50%;
       background-color:#3BA3B5;
       border: 2px solid #5B667B;
-      visibility: visible;
     }
     #menu_me_small:hover::before {
       content: "ME";
@@ -2778,15 +3105,7 @@ z-index: 10;
       border-radius: 50%;
       background-color:#3BA3B5;
       border: 2px solid #5B667B;
-      visibility: visible;
     }
-  #nav_img
-  {
-      width: 100%;
-      height: auto;
-      position: absolute;
-      top:-7px;
-  }   
   .top_page{
      background-image: url("../asserts/img/top_bg.svg"); 
      background-repeat:repeat;
@@ -2794,44 +3113,96 @@ z-index: 10;
      min-height: 100vh;
      overflow: hidden;
   }
+  .recommend_pan{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 284px;
+    height: 284px;
+    position: relative;
+    margin-top:169px;
+  }
   .makimaki{
       font-weight:bolder;
       font-family:'Poppins', Arial, sans-serif;
-       font-size: 22px;
-       color: #5B667B;
-       margin-top: 114px;
-       margin-left:19px;
-  }
-  #recomend_text{
-      margin-left:19px;
+      font-size: 22px;
+      color: #5B667B;
       position: absolute;
-      top: 137.5px;
+      top: -72px;
+      left: -16px;
+      
+  }
+  #recomend_text{            
       z-index: 11;
-      width: 232px;
-      height: 47px;
+      width: 230px;
+      height: auto;
+      position: absolute;
+      top:-30px;
+      left:-16px;
   }
   #recomend_black_text{
-      margin-left:21px;
-      position: absolute;
-      top: 139.5px;
       z-index: 10;
-      width: 232px;
-      height: 47px;
+      width: 230px;
+      height: auto;
+      position: absolute;
+      top:-27px;
+      left:-13px;
   }
   .top_card{
-    width: 287px;
-    height: 287px;
-    position: absolute;
-    top:169px;
-    left: 40px;
+    width: 277px;
+    height: 277px;    
     border: 2px solid #5B667B;
     background-color: #5B667B;
     border-radius:20px;
     z-index: 5;
     overflow: hidden;
     box-shadow: 5px 5px #5B667B;
+    position: absolute;
+    top:0px;
+    left:0px;
   } 
-  .tcard-content{
+  .card-content{
+    width:100%;
+    height: 85%;
+    overflow: hidden;
+  }
+  .card-content img{
+      width:284px;
+      height: 284px;
+  }
+  .card-footer{
+      width: 100%;
+      height: 15%;
+      border-top:2px solid #5B667B;
+      background-color: #838EA3;
+  }
+  .card-footer p{
+    text-align: center;
+    font-size: 15px;
+    margin-left: -5px;
+    margin-top: 8px;
+    color: white;
+    font-family: "Zen Maru Gothic", sans-serif;
+    font-weight: bold;
+    width: 196px;
+    height: 27px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.05em;
+  }
+  .check_it{
+      z-index: 6;
+      cursor: url('../asserts/img/point.png'), auto; 
+      position: absolute;
+      bottom:-20px;
+      right:-20px;
+  }  
+  #check_it{
+    width: 108px;
+    height: 107px;
+  }
+.tcard-content{
     width:100%;
     height: 80%;
     overflow: hidden;
@@ -2854,7 +3225,7 @@ z-index: 10;
     color:white;
     margin-left:9px;
     margin-top: 7px;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Zen Maru Gothic', Arial, sans-serif;
     font-weight: bold;
     font-size: 10px;
     white-space: nowrap;
@@ -2869,47 +3240,6 @@ z-index: 10;
   margin-right: 11px;
   margin-top: 11px;
 }
-  .card-content{
-      width:100%;
-      height: 85%;
-      overflow: hidden;
-  }
-  .card-content img{
-      width:292px;
-      height: 292px;
-  }
-  .card-footer{
-      width: 100%;
-      height: 15%;
-      border-top:2px solid #5B667B;
-      background-color: #838EA3;
-  }
-  .card-footer p{
-    text-align: center;
-    font-size: 13px;
-    margin-left: 13px;
-    margin-top: 11px;
-    color: white;
-    font-family: "Zen Maru Gothic", sans-serif;
-    font-weight: bold;
-    width: 134px;
-    height: 19px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    letter-spacing: 0.05em;
-  }
-  .check_it{
-      position: absolute;
-      top:364px;
-      right:20px;
-      z-index: 6;
-      cursor: url('../asserts/img/point.png'), auto; 
-  }  
-  #check_it{
-      width:112px;
-      height: 110px;
-  }
   .horizen_content{
     position: absolute;
     top:492px;
@@ -2951,7 +3281,7 @@ z-index: 10;
    {
       width:302px;
       height: 40px;
-      margin-top: 80px;
+      margin-top: 135px;
    }
    #caracter_help{
       width:316px;
@@ -3010,7 +3340,7 @@ z-index: 10;
       position: relative;
    }
    #caracter_more::before {
-      content: "MORE";
+      content: attr(data-before);
       text-align: center;
       display: flex;
       justify-content: center;
@@ -3027,7 +3357,7 @@ z-index: 10;
       border: 2px solid #5B667B;
     }
     #caracter_more:hover::before {
-      content: "MORE";
+      content: attr(data-before);
       text-align: center;
       display: flex;
       justify-content: center;
@@ -3051,8 +3381,8 @@ z-index: 10;
    }
    #design_title{
       width:333px;
-      height: 41px;
-      margin-top: 80px;
+      height:auto;
+      margin-top: 135px;
     }
    #design_more{
       font-family: 'Poppins', Arial, sans-serif;
@@ -3068,7 +3398,7 @@ z-index: 10;
       position: relative;
    }
    #design_more::before {
-      content: "MORE";
+      content: attr(data-before);
       text-align: center;
       display: flex;
       justify-content: center;
@@ -3085,7 +3415,7 @@ z-index: 10;
       border: 2px solid #5B667B;
     }
     #design_more:hover::before {
-      content: "MORE";
+      content: attr(data-before);
       text-align: center;
       display: flex;
       justify-content: center;
@@ -3223,6 +3553,7 @@ z-index: 10;
       z-index: 5;
       overflow: hidden;
       margin-left: 50px;
+      transform: translateZ(0);
    }
    .photo_content{
       width:100%;
@@ -3280,6 +3611,8 @@ z-index: 10;
    .photo_footer #t1{
       font-size: 18px;
       font-family: 'Zen Maru Gothic', Arial, sans-serif;
+      margin-top: 11px;
+      font-weight: bold;
    }
    .photo_footer #t2{
       font-size: 8px;
@@ -3322,6 +3655,28 @@ z-index: 10;
    section {
       position: relative;
    }
+   footer{
+    width: 99%;
+    height: 85px;
+    background-color: #838EA3;
+    border:2px solid #5B667B;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    position: fixed;
+    bottom: 0px;
+    right:0px;
+    z-index: 9000;
+    display: none;
+    animation: fadeIn 1s ease-in;
+ }
+ .footer_real{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content:center;
+  padding-left: 0px;
+  padding-right: 10px;
+ }
    .top_pcontainer{
       bottom: 0;
       width: 100%;
@@ -3334,8 +3689,9 @@ z-index: 10;
    }
    .top_pcontainer p{
       width: auto;
-      font-family: 'Poppins', Arial, sans-serif;
-      font-size: 1.5rem;
+      font-family: 'Zen Maru Gothic', Arial, sans-serif;
+      font-size: 22px;
+      font-weight: bold;
       white-space: nowrap;
       animation: stream 40s linear infinite;
       letter-spacing: 0.05em;
@@ -3352,8 +3708,9 @@ z-index: 10;
    }
    .pcontainer p{
       width: auto;
-      font-family: 'Poppins', Arial, sans-serif;
-      font-size: 1.5rem;
+      font-family: 'Zen Maru Gothic', sans-serif;
+      font-size: 22px;
+      font-weight: bold;
       white-space: nowrap;
       animation: stream 40s linear infinite;
       letter-spacing: 0.05em;
@@ -3366,104 +3723,6 @@ z-index: 10;
       transform: translateX(-100%);
       }
     }    
-  footer{
-      width: 99%;
-      height: 85px;
-      background-color: #838EA3;
-      border:2px solid #5B667B;
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px;
-      position: fixed;
-      bottom: 0px;
-      z-index: 9000;
-      display:flex;
-      animation: fadeIn 1s ease-in;
-  }
-  #menu_design_small{
-      font-family: 'Poppins', Arial, sans-serif;
-      font-size: 28px;
-      font-weight:bold;
-      font-style: italic;
-      color: white;
-      width: 47px;
-      height: 47px;
-      cursor: url('../asserts/img/point.png'), auto;
-      border-radius: 50%;
-      background-color: #5370CB;
-      border: 2px solid #5B667B;
-      position: absolute;
-      left: 102px;
-      top: 7px;
-      z-index: 9999;
-      visibility: visible;
-   }
-  #design_letter{
-      font-family: Manrope3;
-      font-weight: bold;
-      font-size: 9px;
-      color: white;
-      position: absolute;
-      left:90px;
-      bottom:6px;
-  }
-  #menu_shop_small{
-      font-family: 'Poppins', Arial, sans-serif;
-      font-size: 28px;
-      font-weight:bold;
-      font-style: italic;
-      color: white;
-      width: 47px;
-      height: 47px;
-      cursor: url('../asserts/img/point.png'), auto;
-      border-radius: 50%;
-      background-color: #B5811E;
-      border: 2px solid #5B667B;
-      position: absolute;
-      left: 179px;
-      top: 7px;
-      z-index: 9999;
-      visibility: visible;
-   } 
-  #shop_letter{
-      font-family: Manrope3;
-      font-weight: bold;
-      font-size: 9px;
-      color: white;
-      position: absolute;
-      left:175px;
-      bottom:6px;
-  }
-  #doll_m{
-      width: 86px;
-      height: 120px;
-      position: absolute;
-      left: 236px;
-      top:-63px;
-  }
-  #soundbg_m{
-      width: 66px;
-      height: 66px;
-      position: absolute;
-      left: 289px;
-      top:-9px;
-      z-index: 10;
-  }
-  #playstopsound_m{
-      width: 37px;
-      height: 37px;
-      position: absolute;
-      left: 303px;
-      top:6px;
-      z-index: 11;
-  }
-  #doll_letter{
-      font-family: Manrope3;
-      font-size: 8px;
-      color: #5B667B;
-      position: absolute;
-      left:260px;
-      bottom:6px;
-  }
   .right_side{
       width: 100%;
       height: 85px;
@@ -3531,13 +3790,13 @@ z-index: 10;
         }
         #animals{
             width: 500px;
-            height: 550px;
+            height: auto;
             position:absolute;
             bottom: -36px;
         }
     .main_side{
         width: 375px;
-        min-height: 100%;
+        min-height: 100vh;
         overflow: hidden;
         position: relative;
         right: 0px;
@@ -3566,7 +3825,7 @@ z-index: 10;
         right: 5px;
         top: 16px;
         z-index: 9999;
-        visibility: visible;
+        display: none;
      }
      #menu_me_small::before {
         content: "ME";
@@ -3588,7 +3847,6 @@ z-index: 10;
         border-radius: 50%;
         background-color:#3BA3B5;
         border: 2px solid #5B667B;
-        visibility: visible;
       }
       #menu_me_small:hover::before {
         content: "ME";
@@ -3610,14 +3868,14 @@ z-index: 10;
         border-radius: 50%;
         background-color:#3BA3B5;
         border: 2px solid #5B667B;
-        visibility: visible;
       }
     #nav_img
     {
-        width: 375px;
-        height: 86px;
+        width: 378px;
+        height: auto;
         position: absolute;
         top:-7px;
+        left:-2px;
     }   
     .top_page{
        background-image: url("../asserts/img/top_bg.svg"); 
@@ -3625,44 +3883,7 @@ z-index: 10;
        width: 100%;
        min-height: 100vh;
        overflow: hidden;
-    }
-    .makimaki{
-        font-weight:bolder;
-        font-family:'Poppins', Arial, sans-serif;
-         font-size: 22px;
-         color: #5B667B;
-         margin-top: 114px;
-         margin-left:19px;
-    }
-    #recomend_text{
-        margin-left:19px;
-        position: absolute;
-        top: 137.5px;
-        z-index: 11;
-        width: 232px;
-        height: 47px;
-    }
-    #recomend_black_text{
-        margin-left:21px;
-        position: absolute;
-        top: 139.5px;
-        z-index: 10;
-        width: 232px;
-        height: 47px;
-    }
-    .top_card{
-      width: 287px;
-      height: 287px;
-      position: absolute;
-      top:169px;
-      left: 40px;
-      border: 2px solid #5B667B;
-      background-color: #5B667B;
-      border-radius:20px;
-      z-index: 5;
-      overflow: hidden;
-      box-shadow: 5px 5px #5B667B;
-    }    
+    }  
     .tcard-content{
         width:100%;
         height: 80%;
@@ -3686,7 +3907,7 @@ z-index: 10;
         color:white;
         margin-left:9px;
         margin-top: 7px;
-        font-family: 'Poppins', Arial, sans-serif;
+        font-family: 'Zen Maru Gothic', Arial, sans-serif;
         font-weight: bold;
         font-size: 10px;
         white-space: nowrap;
@@ -3700,47 +3921,6 @@ z-index: 10;
       height: 7px;
       margin-right: 11px;
       margin-top: 11px;
-    }
-    .card-content{
-        width:100%;
-        height: 85%;
-        overflow: hidden;
-    }
-    .card-content img{
-        width:292px;
-        height: 292px;
-    }
-    .card-footer{
-        width: 100%;
-        height: 15%;
-        border-top:2px solid #5B667B;
-        background-color: #838EA3;
-    }
-    .card-footer p{
-      text-align: center;
-      font-size: 13px;
-      margin-left: 13px;
-      margin-top: 11px;
-      color: white;
-      font-family: "Zen Maru Gothic", sans-serif;
-      font-weight: bold;
-      width: 134px;
-      height: 19px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      letter-spacing: 0.05em;
-    }
-    .check_it{
-        position: absolute;
-        top:364px;
-        right:20px;
-        z-index: 6;
-        cursor: url('../asserts/img/point.png'), auto; 
-    }  
-    #check_it{
-        width:112px;
-        height: 110px;
     }
     .horizen_content{
       position: absolute;
@@ -3762,7 +3942,7 @@ z-index: 10;
      {
         width:302px;
         height: 40px;
-        margin-top: 80px;
+        margin-top: 135px;
      }
      #caracter_help{
         width:316px;
@@ -3821,7 +4001,7 @@ z-index: 10;
         position: relative;
      }
      #caracter_more::before {
-        content: "MORE";
+        content: attr(data-before);
         text-align: center;
         display: flex;
         justify-content: center;
@@ -3838,7 +4018,7 @@ z-index: 10;
         border: 2px solid #5B667B;
       }
       #caracter_more:hover::before {
-        content: "MORE";
+        content: attr(data-before);
         text-align: center;
         display: flex;
         justify-content: center;
@@ -3860,11 +4040,6 @@ z-index: 10;
         width: 100%;
         height: auto;
      }
-     #design_title{
-        width:333px;
-        height: 41px;
-        margin-top: 80px;
-      }
      #design_more{
         font-family: 'Poppins', Arial, sans-serif;
         font-size: 20px;
@@ -3879,7 +4054,7 @@ z-index: 10;
         position: relative;
      }
      #design_more::before {
-        content: "MORE";
+        content: attr(data-before);
         text-align: center;
         display: flex;
         justify-content: center;
@@ -3896,7 +4071,7 @@ z-index: 10;
         border: 2px solid #5B667B;
       }
       #design_more:hover::before {
-        content: "MORE";
+        content: attr(data-before);
         text-align: center;
         display: flex;
         justify-content: center;
@@ -4034,6 +4209,7 @@ z-index: 10;
         z-index: 5;
         overflow: hidden;
         margin-left: 50px;
+        transform: translateZ(0);
      }
      .photo_content{
         width:100%;
@@ -4091,6 +4267,7 @@ z-index: 10;
      .photo_footer #t1{
         font-size: 18px;
         font-family: 'Zen Maru Gothic', Arial, sans-serif;
+        font-weight: bold;
      }
      .photo_footer #t2{
         font-size: 8px;
@@ -4133,6 +4310,28 @@ z-index: 10;
      section {
         position: relative;
      }
+      footer{
+        width: 371px;
+        height: 85px;
+        background-color: #838EA3;
+        border:2px solid #5B667B;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        z-index: 9000;
+        display: none;
+        animation: fadeIn 1s ease-in;
+      }
+      .footer_real{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content:center;
+        padding-left:0px;
+        padding-right: 10px;
+      }
      .top_pcontainer{
         bottom: 0;
         width: 100%;
@@ -4145,8 +4344,9 @@ z-index: 10;
      }
      .top_pcontainer p{
         width: auto;
-        font-family: 'Poppins', Arial, sans-serif;
-        font-size: 1.5rem;
+        font-family: 'Zen Maru Gothic', Arial, sans-serif;
+        font-size: 22px;
+        font-weight: bold;
         white-space: nowrap;
         animation: stream 40s linear infinite;
         letter-spacing: 0.05em;
@@ -4163,8 +4363,9 @@ z-index: 10;
      }
      .pcontainer p{
         width: auto;
-        font-family: 'Poppins', Arial, sans-serif;
-        font-size: 1.5rem;
+        font-family: 'Zen Maru Gothic', Arial, sans-serif;
+        font-size: 22px;
+        font-weight: bold;
         white-space: nowrap;
         animation: stream 40s linear infinite;
         letter-spacing: 0.05em;
@@ -4177,104 +4378,6 @@ z-index: 10;
         transform: translateX(-100%);
         }
       }    
-    footer{
-        width: 371px;
-        height: 85px;
-        background-color: #838EA3;
-        border:2px solid #5B667B;
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
-        position: fixed;
-        bottom: 0px;
-        z-index: 9000;
-        display:flex;
-        animation: fadeIn 1s ease-in;
-    }
-    #menu_design_small{
-        font-family: 'Poppins', Arial, sans-serif;
-        font-size: 28px;
-        font-weight:bold;
-        font-style: italic;
-        color: white;
-        width: 47px;
-        height: 47px;
-        cursor: url('../asserts/img/point.png'), auto;
-        border-radius: 50%;
-        background-color: #5370CB;
-        border: 2px solid #5B667B;
-        position: absolute;
-        left: 102px;
-        top: 7px;
-        z-index: 9999;
-        visibility: visible;
-     }
-    #design_letter{
-        font-family: Manrope3;
-        font-weight: bold;
-        font-size: 9px;
-        color: white;
-        position: absolute;
-        left:90px;
-        bottom:6px;
-    }
-    #menu_shop_small{
-        font-family: 'Poppins', Arial, sans-serif;
-        font-size: 28px;
-        font-weight:bold;
-        font-style: italic;
-        color: white;
-        width: 47px;
-        height: 47px;
-        cursor: url('../asserts/img/point.png'), auto;
-        border-radius: 50%;
-        background-color: #B5811E;
-        border: 2px solid #5B667B;
-        position: absolute;
-        left: 179px;
-        top: 7px;
-        z-index: 9999;
-        visibility: visible;
-     } 
-    #shop_letter{
-        font-family: Manrope3;
-        font-weight: bold;
-        font-size: 9px;
-        color: white;
-        position: absolute;
-        left:175px;
-        bottom:6px;
-    }
-    #doll_m{
-        width: 86px;
-        height: 120px;
-        position: absolute;
-        left: 236px;
-        top:-63px;
-    }
-    #soundbg_m{
-        width: 66px;
-        height: 66px;
-        position: absolute;
-        left: 289px;
-        top:-9px;
-        z-index: 10;
-    }
-    #playstopsound_m{
-        width: 37px;
-        height: 37px;
-        position: absolute;
-        left: 303px;
-        top:6px;
-        z-index: 11;
-    }
-    #doll_letter{
-        font-family: Manrope3;
-        font-size: 8px;
-        color: #5B667B;
-        position: absolute;
-        left:260px;
-        bottom:6px;
-    }
     .right_side{
         width: 100%;
         height: 85px;
@@ -4308,14 +4411,14 @@ z-index: 10;
     margin-top: 247px;
     width: 483px;
     height: 520px;
-    animation: fadeIn 4s ease-in;
+    animation: fadeIn 1.5s ease-in;
   }
   #animals{
     width: 1171px;
     height: 945px;
     position:absolute;
     bottom: -91.6px;
-    animation: fadeIn 1s ease-in;
+    animation: fadeIn 0.5s ease-in;
   }
   .music{
     width:100%;
@@ -4323,7 +4426,7 @@ z-index: 10;
     justify-content: center;
     position: relative;
     margin-top:857px;
-    animation: fadeIn 3s ease-in;
+    animation: fadeIn 1s ease-in;
   }
 
 }
@@ -4333,7 +4436,7 @@ z-index: 10;
       display: flex;
       justify-content: center;
       width: 496px;
-      height: 944px;
+      height: auto;
       position: fixed;
       top:30px;
       z-index: -3;     
@@ -4346,17 +4449,17 @@ z-index: 10;
     overflow: hidden;
  }
  #logo{
-    margin-top: 147.8px;
+    margin-top: 180px;
     width: 289px;
     height: 311px;
-    animation: fadeIn 4s ease-in;
+    animation: fadeIn 1.5s ease-in;
   }
   #animals{
     width: 769px;
     height: 511px;
     position:absolute;
     bottom: -54.5px;
-    animation: fadeIn 1s ease-in;
+    animation: fadeIn 0.5s ease-in;
   }
   .music{
     width:100%;
@@ -4364,7 +4467,7 @@ z-index: 10;
     justify-content: center;
     position: relative;
     margin-top:227px;
-    animation: fadeIn 3s ease-in;
+    animation: fadeIn 1s ease-in;
   }
 
 }
@@ -4373,8 +4476,8 @@ z-index: 10;
   #left_bg{
       display: flex;
       justify-content: center;
-      width: 736px;
-      height: 1400px;
+      width: 829px;
+      height: 1577px;
       position: fixed;
       top:30px;
       z-index: -3;     
@@ -4387,17 +4490,17 @@ z-index: 10;
     overflow: hidden;
  }
  #logo{
-    margin-top: 147.8px;
+    margin-top: 180px;
     width: 289px;
     height: 311px;
-    animation: fadeIn 4s ease-in;
+    animation: fadeIn 1.5s ease-in;
   }
   #animals{
     width: 1000px;
     height:806px;
     position:absolute;
     bottom: -54.5px;
-    animation: fadeIn 1s ease-in;
+    animation: fadeIn 0.5s ease-in;
   }
 
 }
@@ -4423,14 +4526,14 @@ z-index: 10;
     margin-top: 76px;
     width: 289px;
     height: 311px;
-    animation: fadeIn 4s ease-in;
+    animation: fadeIn 1.5s ease-in;
   }
   #animals{
     width: 701px;
     height: 565px;
     position:absolute;
     bottom: -52.5px;
-    animation: fadeIn 1s ease-in;
+    animation: fadeIn 0.5s ease-in;
   }
 
 }
@@ -4456,14 +4559,14 @@ z-index: 10;
     margin-top: 102.4px;
     width: 195px;
     height: 210px;
-    animation: fadeIn 4s ease-in;
+    animation: fadeIn 1.5s ease-in;
   }
   #animals{
     width: 372px;
     height: 346px;
     position:absolute;
     bottom: -36px;
-    animation: fadeIn 1s ease-in;
+    animation: fadeIn 0.5s ease-in;
   }
 
 }

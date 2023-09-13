@@ -1,9 +1,41 @@
+@font-face {
+    font-family: 'Zen Maru Gothic';
+    src: url('../asserts/font/ZenMaruGothic-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal; 
+  }
+  @font-face {
+    font-family: 'Zen Maru Gothic';
+    src: url('../asserts/font/ZenMaruGothic-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal; 
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../asserts/font/Poppins-Bold.ttf') format('truetype'), 
+    url('../asserts/font/Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal; 
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../asserts/font/Poppins-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic; 
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../asserts/font/Poppins-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic; 
+  }
 body{
     background-image: url("../asserts/img/intro.png");
     background-repeat: repeat;
     width: 100vw;
     height: 100vh;
     margin:0;
+    cursor: url('../asserts/img/point.png'), auto; 
 }
 .total{
     width: 100%;
@@ -17,6 +49,10 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+.wrap_container{
+    display: flex;
+    flex-wrap: wrap;
 }
 .content{
     width: 759px;
@@ -83,25 +119,33 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+    cursor: url('../asserts/img/point.png'), auto; 
+}
+#link:hover{
+ color:#5B667B;
+ background-color: white;
 }
 #error_en{
     text-align: center;
     font-size: 12px;
     line-height: 22px;
     font-weight: bold;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
-    width: 629px;
+    width: auto;
     height: 101px;
     margin-top: 50px;
     z-index: 1;
     display: block;
+    padding-left: 105px;
+    padding-right: 10px;
 }
 #error_en1{
     text-align: center;
     font-size: 12px;
     font-weight: bold;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
     width: 629px;
     height: 101px;
@@ -122,23 +166,26 @@ body{
     text-align: center;
     font-size: 12px;
     font-weight: bold;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
     width: 96px;
     height: 30px;
     border-radius: 25px;
     border: 2px solid white;
-    margin-top: 14px;
     text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
+    z-index: 9999;
+    position: relative;
+    margin-bottom: -100px;
 }
 #sibata{
     text-align: center;
     font-size: 12px;
     font-weight: bold;
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
     width: 112px;
     height: auto;
@@ -217,7 +264,7 @@ body{
         justify-content: center;
         align-items: center;
     }
-    #error_en1{
+    #error_en{
         text-align: left;
         font-size: 10px;
         line-height: 22px;
@@ -229,18 +276,7 @@ body{
         margin-top: 36.5px;
         z-index: 1;
         display: block;
-    }
-    #error_en{
-        text-align: center;
-        font-size: 12px;
-        font-weight: bold;
-        font-family: 'Poppins', Arial, sans-serif;
-        color: white;
-        width: 629px;
-        height: 101px;
-        margin-top: 50px;
-        z-index: 1;
-        display: none;
+        padding-left: 0px;
     }
     .touch_pan{
         display:flex;
@@ -255,24 +291,24 @@ body{
         text-align: center;
         font-size: 14px;
         font-weight: bold;
-        font-family: 'Poppins', Arial, sans-serif;
+        font-family: 'Poppins', sans-serif;
         color: white;
         width: 94px;
         height: 30px;
         border-radius: 25px;
         border: 2px solid white;
-        margin-top: 14px;
         text-decoration: none;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 72px;
+        position: absolute;
+        left:134px;
     }
     #sibata{
         text-align: center;
         font-size: 9px;
         font-weight: bold;
-        font-family: 'Poppins', Arial, sans-serif;
+        font-family: 'Poppins', sans-serif;
         color: white;
         width: 112px;
         height: 12px;
@@ -280,4 +316,42 @@ body{
         margin-top:39.4px;
     }
 
+}
+@media only screen and (max-width: 470px) { 
+    #touch{
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        color: white;
+        width: 94px;
+        height: 30px;
+        border-radius: 25px;
+        border: 2px solid white;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left:76px;
+    }
+}
+@media only screen and (max-width: 375px) { 
+    #touch{
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: 'Poppins', sans-serif;
+        color: white;
+        width: 94px;
+        height: 30px;
+        border-radius: 25px;
+        border: 2px solid white;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left:51px;
+    }
 }

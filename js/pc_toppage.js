@@ -1,3 +1,4 @@
+var modal_show_imgs = [];
 var soundbg = document.getElementById("soundbg");
 var playstopsound = document.getElementById("playstopsound");
 var soundbg_m = document.getElementById("soundbg_m");
@@ -8,16 +9,18 @@ var rotation = 0;
 var intervalId;
 var dance_flag = 0;
 var rithem = 0;
+audioBG.style.display = "none";
+window.localStorage.setItem("view", "main");
 
 const clickSound = document.getElementById('clickSound');
 function playHover(){
   clickSound.currentTime = 0;
-  clickSound.src = "../asserts/audio/hover.wav";
+  clickSound.src = "./asserts/audio/hover.wav";
   clickSound.play();
 }
 function playClick(){
   clickSound.currentTime = 0;
-  clickSound.src = "../asserts/audio/linkbuttonclick.wav";
+  clickSound.src = "./asserts/audio/linkbuttonclick.wav";
   clickSound.play();
 }
 
@@ -28,41 +31,25 @@ function changeSoundState() {
   else window.localStorage.setItem("sound", "on");
   setMusicState();
 }
-Audio.prototype.play = (function(play) {
-  return function () {
-    var audio = this,
-        args = arguments,
-        promise = play.apply(audio, args);
-    if (promise !== undefined) {
-      promise.catch(_ => {
-        // Autoplay was prevented. This is optional, but add a button to start playing.
-        var el = document.createElement("button");
-        el.style.visibility = "hidden";
-        el.innerHTML = "Play";
-        el.addEventListener("click", function(){play.apply(audio, args);});
-          this.parentNode.insertBefore(el, this.nextSibling)
-      });
-    }
-  };
-})(Audio.prototype.play);
-
 function setMusicState() {
   let music_state = window.localStorage.getItem("sound");
   if (music_state == "on") {
     startAnimation();
-    playstopsound.src = "../asserts/img/music_stop.svg";
-    doll.src = "../asserts/gif/doll.gif";
-    playstopsound_m.src = "../asserts/img/music_stop.svg";
-    doll_m.src = "../asserts/gif/doll.gif";
+    playstopsound.src = "./asserts/img/music_stop.svg";
+    doll.src = "./asserts/gif/doll.gif";
+    playstopsound_m.src = "./asserts/img/music_stop.svg";
+    doll_m.src = "./asserts/gif/doll.gif";
     audioBG.play();
-
   } else {
     stopAnimation();
-    playstopsound.src = "../asserts/img/music_play.svg";
-    doll.src = "../asserts/img/doll.png";
-    playstopsound_m.src = "../asserts/img/music_play.svg";
-    doll_m.src = "../asserts/img/doll.png";
+    playstopsound.src = "./asserts/img/music_play.svg";
+    doll.src = "./asserts/img/doll.png";
+    playstopsound_m.src = "./asserts/img/music_play.svg";
+    doll_m.src = "./asserts/img/doll.png";
     audioBG.pause();
+  }
+  if (total_rect.width <= 1020) { 
+    menu_me_small.style.display = "block";
   }
 }
 var ani_ani = false;
@@ -70,27 +57,20 @@ function rotateSoundBG() {
   rotation += 1;
   rotation = rotation % 360;
   soundbg.style.transform = "rotate(" + rotation + "deg)";
-
   rithem++;
-  // if(rithem == 200 && ani_ani==false) {
-  //   animals.src ="../asserts/gif/animals.gif";
-  //   ani_ani = true;
-  // }
   rithem %= 600;
 }
-
 function startAnimation() {
-  // Start the animation by repeatedly calling the rotateBox function
   intervalId = setInterval(rotateSoundBG, 5);
 }
 function stopAnimation() {
-  // Stop the animation by clearing the interval
   clearInterval(intervalId);
-  //doll.src = "../asserts/img/doll.svg";
 }
-
-const total = document.getElementById("total");
+//const total = document.getElementById("total");
+const caracter_subpage = document.getElementById("caracter_subpage");
+const design_subpage = document.getElementById("design_subpage");
 const main_side = document.getElementById("main_side");
+const left_side = document.getElementById("left_side");
 const top_content = document.getElementById("top_content");
 const nav = document.getElementById("nav");
 const logo = document.getElementById("logo");
@@ -125,20 +105,17 @@ const me_more = document.getElementById("me_more");
 
 var check_it = document.getElementById("check_it");
 function checkit_over() {
-  check_it.src = "../asserts/img/check_it2.png";
+  check_it.src = "./asserts/img/check_it2.png";
 }
 function checkit_out() {
-  check_it.src = "../asserts/img/check_it1.png";
+  check_it.src = "./asserts/img/check_it1.png";
 }
 const colors = ["#FAD4FA", "#F8E8A7", "#A7BAF8", "#A7F8D3"];
 var horizen_content = document.getElementById("horizen_content");
 var childComponents = document.querySelectorAll(".item_content");
-var j=0;
 childComponents.forEach((childTag) => {
   let index = (Math.floor(Math.random() * 10) + 1) % 5;
   childTag.style.backgroundColor = colors[index];
-  childTag.innerHTML =  j+1;
-  j++;
   let parent = childTag.parentNode;
   let arrow_img = parent.querySelector("img");
   let origin_top = 82;
@@ -149,26 +126,17 @@ childComponents.forEach((childTag) => {
   }
   
   childTag.addEventListener("mouseenter", function () {
-    // hover_img.style.visibility = "visible";
-    // hover_img.src = child.src;
-    // child.style.transform = "scale(1.2)";
     childTag.style.boxShadow  = " 3px 3px #5B667B";
     childTag.style.marginLeft ="3px";
     childTag.style.marginTop ="3px";
     arrow_img.style.top = origin_top+3+"px";
     playHover();
-    // arrow_img.style.right = origin_right-3+"px";
-    // fadein();
   });
   childTag.addEventListener("mouseleave", function () {
-    // hover_img.style.visibility = "hidden";
-    // hover_img.src = "";
-    // child.style.transform = "scale(1)";
     childTag.style.boxShadow  = " 5px 5px #5B667B";
     childTag.style.marginLeft ="0px";
     childTag.style.marginTop ="0px";
     arrow_img.style.top = origin_top+"px";
-    // arrow_img.style.right = origin_right+"px";
   });
   childTag.addEventListener("mousedown", function() {
     childTag.style.boxShadow  = " 0px 0px #5B667B";
@@ -176,14 +144,12 @@ childComponents.forEach((childTag) => {
     childTag.style.marginTop ="5px";
     arrow_img.style.top = origin_top+5+"px";
     playClick();
-    // arrow_img.style.right = origin_right-5+"px";
   });
   childTag.addEventListener("mouseup", function() {
     childTag.style.boxShadow  = " 5px 5px #5B667B";
     childTag.style.marginLeft ="0px";
     childTag.style.marginTop ="0px";
     arrow_img.style.top = origin_top+"px";
-    // arrow_img.style.right = origin_right+"px";
   });
 });
 var hori1 = document.getElementById("hori1");
@@ -222,17 +188,7 @@ var horis=[
   {item:hori4,left:left4},
   {item:hori5,left:left5}
 ];
-setInterval(() => {
-  horis.forEach(hitem=>{
-    if(hitem.left<-hwidth){
-      hitem.left = (hox+hwidth)*4+hox;
-    } 
-    else{
-      hitem.left =hitem.left - 1;
-    } 
-    hitem.item.style.left = hitem.left+"px";
-  });
-}, 20);
+
 document.getElementById("go_top").addEventListener("click", function (event) {
   event.preventDefault();
   playClick();
@@ -274,7 +230,7 @@ const hover_img = document.getElementById("hover_img");
 cards.forEach((card) => {
   let t_content = card.querySelector(".tcard-content");
   let child = t_content.firstElementChild;
-  child.addEventListener("mouseenter", function () {
+  card.addEventListener("mouseenter", function () {
     playHover();
     hover_img.style.visibility = "visible";
     hover_img.src = child.src;
@@ -284,7 +240,7 @@ cards.forEach((card) => {
     card.style.marginTop = "3px";
     fadein();
   });
-  child.addEventListener("mouseleave", function () {
+  card.addEventListener("mouseleave", function () {
     hover_img.style.visibility = "hidden";
     hover_img.src = "";
     child.style.transform = "scale(1)";
@@ -292,22 +248,52 @@ cards.forEach((card) => {
     card.style.marginLeft = "0px";
     card.style.marginTop = "0px";
   });
-  child.addEventListener("mousedown", function() {
+  card.addEventListener("mousedown", function() {
     playClick();
     card.style.boxShadow  = " 0px 0px #5B667B";
     card.style.marginLeft ="5px";
     card.style.marginTop ="5px";
   });
-  child.addEventListener("mouseup", function() {
+  card.addEventListener("mouseup", function() {
     card.style.boxShadow  = " 5px 5px #5B667B";
     card.style.marginLeft ="0px";
     card.style.marginTop ="0px";
+    goSubPage(card,child);
   });
 });
+function goSubPage(card,child)
+{
+  let parent = card.parentNode.parentNode.parentNode.parentNode;
+  main_side.style.display = "none";
+  if(total_rect.width<=470){
+    left_side.style.display = "none";
+    nav.style.display = "flex";
+    footer.style.display = "flex";
+  } 
+  if(modal_show_imgs.length>0) modal_show_imgs = [];
+  if(parent.id=="caracter" || parent.parentNode.id=="caracter"){
+    design_subpage.style.display = "none";
+    caracter_subpage.style.display = "block";
+    window.localStorage.setItem("view", "caracter_sub");
+    let sub_img = document.getElementById("caracter_topcard_img");
+    sub_img.src = child.src;
+    modal_show_imgs = caracter_subpage.querySelectorAll(".card_s");
+  }  
+  else if(parent.id=="design" || parent.parentNode.id=="design"){
+    design_subpage.style.display = "block";
+    caracter_subpage.style.display = "none";
+    window.localStorage.setItem("view", "design_sub");
+    let sub_img = document.getElementById("design_topcard_img");
+    sub_img.src = child.src;
+    modal_show_imgs = design_subpage.querySelectorAll(".card_s");
+  } 
+  viewHori();
+  scrollToTop();
+}
 var top_card_img = document.getElementById("top_card_img");
 var top_card = document.getElementById("top_card");
 
-top_card_img.addEventListener("mouseenter", function () {
+top_card.addEventListener("mouseenter", function () {
   playHover();
   hover_img.style.visibility = "visible";
   hover_img.src = top_card_img.src;
@@ -317,7 +303,7 @@ top_card_img.addEventListener("mouseenter", function () {
   top_card.style.marginTop = "3px";
   fadein();
 });
-top_card_img.addEventListener("mouseleave", function () {
+top_card.addEventListener("mouseleave", function () {
   hover_img.style.visibility = "hidden";
   hover_img.src = "";
   top_card_img.style.transform = "scale(1)";
@@ -325,16 +311,31 @@ top_card_img.addEventListener("mouseleave", function () {
   top_card.style.marginLeft = "0px";
   top_card.style.marginTop = "0px";
 });
-top_card_img.addEventListener("mousedown", function() {
+top_card.addEventListener("mousedown", function() {
   playClick();
   top_card.style.boxShadow  = " 0px 0px #5B667B";
   top_card.style.marginLeft ="5px";
   top_card.style.marginTop ="5px";
 });
-top_card_img.addEventListener("mouseup", function() {
+top_card.addEventListener("mouseup", function() {
   top_card.style.boxShadow  = " 5px 5px #5B667B";
   top_card.style.marginLeft ="0px";
   top_card.style.marginTop ="0px";
+
+  main_side.style.display = "none";
+  design_subpage.style.display = "none";
+  caracter_subpage.style.display = "block";
+  if(total_rect.width<=470){
+    left_side.style.display = "none";
+    nav.style.display = "flex";
+    footer.style.display = "flex";
+  } 
+  window.localStorage.setItem("view", "caracter_sub");
+  viewHori();
+  document.getElementById("caracter_topcard_img").src = top_card_img.src;
+  if(modal_show_imgs.length>0) modal_show_imgs = [];
+  modal_show_imgs = caracter_subpage.querySelectorAll(".card_s");
+  scrollToTop();
 });
 function fadein(){
   var op = 0;
@@ -346,9 +347,8 @@ function fadein(){
     op += 0.1; // increment opacity gradually
   }, 10); // 10ms interval
 }
-
-setMusicState();
-
+var caracter_title = document.getElementById("caracter_title");
+var design_title = document.getElementById("design_title");
 var menu_actions =[
   {bt:menu_caracter,target:caracter},{bt:menu_caracter_small,target:caracter},
   {bt:menu_design,target:design},{bt:menu_design_small,target:design},
@@ -359,6 +359,20 @@ menu_actions.forEach((item)=>{
   item.bt.addEventListener('click', (event) => {
     event.preventDefault(); // Prevent the default link behavior
     playClick();
+
+    let vs = window.localStorage.getItem("view");
+    if(vs!="main")
+    {
+      main_side.style.display = "block";
+      if(total_rect.width<=470)
+      {
+          left_side.style.display = "flex";
+      }
+      design_subpage.style.display = "none";
+      caracter_subpage.style.display = "none";
+      window.localStorage.setItem("view", "main");
+      viewHori();
+    }
     item.target.scrollIntoView({ behavior: 'smooth' });
   });
   item.bt.addEventListener('mouseenter', (event) => {
@@ -372,6 +386,14 @@ more_bts.forEach((more)=>{
   more.addEventListener('click', (event) => {
     event.preventDefault(); // Prevent the default link behavior
     playClick();
+    if(more.id === "shop_more")
+    {
+      window.open("https://www.zazzle.co.jp/store/mabataki?rf=238786256992383917", '_blank');
+    }
+    else if(more.id === "me_more")
+    {
+      window.open("https://forms.gle/zBzrFYYuXAY7iJ8LA", '_blank');
+    }
   });
   more.addEventListener('mouseenter', (event) => {
     event.preventDefault(); // Prevent the default link behavior
@@ -380,13 +402,16 @@ more_bts.forEach((more)=>{
 });
 
 window.addEventListener("scroll", function () {
+  if(started==false) return;
+  let vs = window.localStorage.getItem('view');
+  if(vs!="main") return;
   const Offset = top_content.offsetTop;
   if (total_rect.width <= 470) {   
     if (window.pageYOffset > Offset) {
-      //nav.style.display = "flex";
+      nav.style.display = "flex";
       footer.style.display = "flex";
     } else {
-      //nav.style.display = "none";
+      nav.style.display = "none";
       footer.style.display = "none";
     }    
   }
@@ -399,42 +424,82 @@ window.addEventListener("scroll", function () {
     footer.style.display = "none";
   }
 });
-
+var flg_csc = -1;
+caracter_subcontent = document.getElementById("caracter_subcontent");
+function showmoreCaracter(){
+  flg_csc *=-1;
+  if(flg_csc==1)
+  {
+    caracter_subcontent.style.display = "block";
+    caracter_more.setAttribute('data-before', 'CLOSE');
+  }
+  else
+  {
+    caracter_subcontent.style.display = "none";
+    caracter_more.setAttribute('data-before', 'MORE');
+  } 
+}
+var flg_dsc = -1;
+design_subcontent = document.getElementById("design_subcontent");
+function showmoreDesign(){
+  flg_dsc *=-1;
+  if(flg_dsc==1)
+  {
+    design_subcontent.style.display = "block";
+    design_more.setAttribute('data-before', 'CLOSE');
+  }
+  else
+  {
+    design_subcontent.style.display = "none";
+    design_more.setAttribute('data-before', 'MORE');
+  } 
+}
 document.addEventListener('DOMContentLoaded', function() {
-  if(total_rect.width>=1940 && total_rect.height>=1600)
+  if(total_rect.width>=1540 && total_rect.height>=1600)
   {
     left_bg.style.width = "829px";
     left_bg.style.height = "1577px";
-    left_bg.style.objectFit = "cover";
+    // left_bg.style.objectFit = "cover";
+    left_bg.src = "./asserts/img/left_new_bg.png";
     animals.style.width="1171px";
     animals.style.height="945px";
     animals.style.bottom="-91.6px";
+
+    logo.style.width="482px";
+    logo.style.height="520px";
+    logo.style.marginTop="247px";
   }
-  else if(total_rect.width>=1940 && total_rect.height<=1600 && total_rect.height>=970)
+  else if(total_rect.width>=1540 && total_rect.height<=1600 && total_rect.height>=1420)
   {
-    left_bg.style.width = "496px";
-    left_bg.style.height = "944px";
-    animals.style.width="701px";
-    animals.style.height="565px";
+    left_bg.style.width = "829px";
+    left_bg.style.height = "1577px";
+    animals.style.width="1171px";
+    animals.style.height="945px";
+    animals.style.bottom="-91.6px";
+
+    logo.style.width="482px";
+    logo.style.height="520px";
+    logo.style.marginTop="247px";
   }
-  else if(total_rect.width>=1280&&total_rect.height>=970 )
+  else if(total_rect.width>=1280&&total_rect.height>=970 && total_rect.height<1420)
   {
     left_bg.style.width = "736px";
-    left_bg.style.height = "1400px";
+    left_bg.style.height = "auto";
     animals.style.width="1000px";
     animals.style.height="806px";
+
   }
   else if(total_rect.width>=768 && total_rect.height<=800 )
   {
     left_bg.style.width = "494px";
-    left_bg.style.height = "770px";
+    left_bg.style.height = "auto";
     animals.style.width="701px";
     animals.style.height="565px";
   }
   else if(total_rect.width<=768 && total_rect.height<=800 )
   {
     left_bg.style.width = "334px";
-    left_bg.style.height = "647px";
+    left_bg.style.height = "auto";
     animals.style.width="372px";
     animals.style.height="346px";
   }
@@ -442,5 +507,17 @@ document.addEventListener('DOMContentLoaded', function() {
   {
     //nav.style.display = "none";
     footer.style.display = "none";
+  }
+  if(total_rect.width<=470)
+  {
+    nav.style.display = "none";
+    footer.style.display = "none";
+  }
+});
+document.addEventListener("visibilitychange", function() {
+  if (document.visibilityState === 'visible') {
+    audioBG.muted = false;
+  } else {
+    audioBG.muted = true;
   }
 });

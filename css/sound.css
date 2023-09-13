@@ -1,27 +1,59 @@
-body{
+@font-face {
+    font-family: 'Zen Maru Gothic';
+    src: url('../asserts/font/ZenMaruGothic-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal; 
+  }
+  @font-face {
+    font-family: 'Zen Maru Gothic';
+    src: url('../asserts/font/ZenMaruGothic-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal; 
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../asserts/font/Poppins-Bold.ttf') format('truetype'), 
+    url('../asserts/font/Poppins-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal; 
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../asserts/font/Poppins-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic; 
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../asserts/font/Poppins-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic; 
+  }
+.sound_pan{
     background-image: url("../asserts/img/intro.png");
     background-color: #5B667B;
     background-repeat: repeat;
     width: 100vw;
     height: 100vh;
     margin:0;
+    position: fixed;
 }
-.total{
+/* .total{
     width: 100%;
     height: 100%;
-}
-.display-center{
+} */
+/* .display-center{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-}
+} */
 .center{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.content{
+.content_s{
     width: 436px;
     height: auto;
 }
@@ -89,7 +121,7 @@ body{
 #sound_off:hover{
     color:#66A0FC;
 }
-@media only screen and (max-width: 600px) {   
+@media only screen and (max-width: 470px) {   
     .content{
         width: 308.5px;
         height: auto;

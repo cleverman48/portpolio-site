@@ -36,7 +36,7 @@
                 </p>
             </div>
             <div class="display-center">
-                <a id="link" href="#">こちらにご連絡ください</a>
+                <a id="link" href="https://forms.gle/zBzrFYYuXAY7iJ8LA" target="_blank">こちらにご連絡ください</a>
             </div>
             <div class="display-center">
                 <div id="error_en">
@@ -45,19 +45,7 @@
                     We apologise for the inconvenience.<br>
                     Please try again later or if you are still experiencing a problem get in                    
                 </div>
-            </div>
-            <div class="display-center">
-                <div id="error_en1">
-                    Something has gone wrong…<br>
-                    The page you are looking for is not available!<br>
-                    We apologise for the inconvenience.<br>
-                    Please try again later or if you are still<br> experiencing a problem get in                    
-                </div>
-            </div>
-            <div class="display-center">
-                <div class=" touch_pan">
-                    <a id="touch" href="#">touch...</a>
-                </div>
+                <div id="touch" onmouseenter="enter()" onmouseleave="leave()" onclick="click()">touch...</div>
             </div>
             <div class="display-center">
                 <p id="sibata">©︎SHIBATAMAKIMAKI</p>
@@ -65,7 +53,18 @@
         </div>
     </div>
     <script>
-        
+        var touch = document.getElementById("touch");
+        function enter() {
+            touch.style.backgroundColor = "white";
+            touch.style.color = "#5B667B";
+        }
+        function leave() {
+            touch.style.backgroundColor = "transparent";
+            touch.style.color = "white";
+        }
+        function click() {
+            window.open("https://forms.gle/zBzrFYYuXAY7iJ8LA", '_blank');
+        }
     </script>
 </body>
 </html>
